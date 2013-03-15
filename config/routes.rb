@@ -1,6 +1,5 @@
 InspireMe::Application.routes.draw do
-
-  resources :inspiration
+  resources :inspirations
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

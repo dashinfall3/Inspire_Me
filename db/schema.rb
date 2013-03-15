@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(:version => 20130315200333) do
   end
 
   create_table "photos", :force => true do |t|
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
     t.integer  "inspiration_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
 end

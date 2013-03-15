@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
-  # attr_accessible :title, :body
   belongs_to :inspiration 
+  attr_accessible :image
+  mount_uploader :image, ImageUploader
 end
