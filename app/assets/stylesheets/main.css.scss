@@ -7,6 +7,7 @@
 
 .main-container {
   padding-top: 60px;
+  padding-bottom: 175px;
 }
 
 .photo {
@@ -14,5 +15,12 @@
 }
 
 .photo-form {
-
+  padding-top: 10px;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  border-top: #ccc 3px solid;
+  width: 100%;
 }
+
+
