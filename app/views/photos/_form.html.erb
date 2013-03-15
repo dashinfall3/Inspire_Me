@@ -11,15 +11,15 @@
         </ul>
       </div>
     <% end %>
-    <p>
-      <%= f.label :caption %><br />
-      <%= f.text_field :caption %>
-      </p>
-      <p>
+    <div class="row-fluid">
+      <div class="span2">
         <%= f.file_field :image %>
-      </p>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+      </div>
+      <div class="span3">
+        <%= f.text_field :caption, :placeholder => "caption" %>
+      </div>
+      <div class="span3">
+        <%= f.submit :class => 'btn' %>
+      </div>  
   <% end %>
 </div>
