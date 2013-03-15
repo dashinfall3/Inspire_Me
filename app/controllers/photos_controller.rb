@@ -17,7 +17,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(params[:photo])
-
+    @photo.inspiration = Inspiration.first
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }

@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130315212543) do
+ActiveRecord::Schema.define(:version => 20130315222318) do
 
   create_table "inspirations", :force => true do |t|
     t.string   "content"

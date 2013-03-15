@@ -9,8 +9,8 @@
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
-      <div class="container">
-        <%= link_to "Master flax", root_path, id: "logo" %>
+      <div class="container-fluid">
+        <%= link_to "Inspirations", root_path, id: "logo", class: "brand" %>
         <nav>
           <ul class="nav pull-right">
             <li><%= link_to "Logout", "#" %></li>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </header>
-<div class="main-container">
+<div class="container-fluid main-container">
   <%= yield %>
 </div>
 </body>
