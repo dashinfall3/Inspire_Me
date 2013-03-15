@@ -1,7 +1,8 @@
 class Inspiration < ActiveRecord::Base
   attr_accessible :content
-  validates :content, :uniqueness => true
-  validates :content, :presence => true
+  validates :content, :presence => true,
+                      :length => { :maximum => 140 },
+                      :uniqueness => true
 
   has_many :photos
 end

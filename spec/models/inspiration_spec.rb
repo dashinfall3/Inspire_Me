@@ -13,8 +13,9 @@ describe Inspiration do
     end
 
     it 'does not accept content over 140 characters' do
-      before { inspiration.content = "a" * 150}
-      it { should_not be_valid }
+      inspiration.content = "a" * 150
+      inspiration.should_not be_valid
+      inspiration.errors.full_messages.include?("Content is too long (maximum is 140 characters)")
     end
 
     it 'cannot be created without content' do
@@ -26,9 +27,9 @@ describe Inspiration do
     end
 
     it 'has unique content' do
-      Inspiration.new(:content => "whatup everybody you should be inspired")
+      inspiration.save
       expect {
-        Inspiration.new(:content => "whatup everybody you should be inspired")
+        Inspiration.create!(:content => "whatup everybody you should be inspired")
       }.to raise_error
     end
 
@@ -38,7 +39,6 @@ describe Inspiration do
   context "has correct model associations" do
     it { should have_many(:photos) }
   end
-
 
 end
 
