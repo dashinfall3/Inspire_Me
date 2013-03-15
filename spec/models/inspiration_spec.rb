@@ -26,6 +26,7 @@ describe Inspiration do
     end
 
     it 'has unique content' do
+      Inspiration.new(:content => "whatup everybody you should be inspired")
       expect {
         Inspiration.new(:content => "whatup everybody you should be inspired")
       }.to raise_error
