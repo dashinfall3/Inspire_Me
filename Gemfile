@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'carrierwave_direct'
 gem 'rmagick'
 gem 'devise'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.
