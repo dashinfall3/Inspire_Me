@@ -15,3 +15,10 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = ENV["AWS_S3_BUCKET"]
 end
+
+
+# put the following data in config/aws.yml
+# development:
+#   AWS_ACCESS_KEY_ID: your_key_here
+#   AWS_SECRET_ACCESS_KEY: your_secret_here
+#   AWS_S3_BUCKET: inspire-me  
