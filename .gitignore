@@ -14,3 +14,7 @@
 /log/*.log
 *.log
 /tmp
+
+# Ignore yaml file with S3 keys
+/config/aws.yml
+
