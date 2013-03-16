@@ -1,0 +1,13 @@
+<div class="span4">
+  <div class="photo">
+    <%= image_tag photo.image_url.to_s %>
+    <div class="row-fluid caption">
+      <div class="span11 caption-text">
+        <%= photo.caption %>
+      </div>
+      <div class="span1">
+        <%= link_to 'x', photo, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
