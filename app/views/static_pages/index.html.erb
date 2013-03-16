@@ -1,19 +1,17 @@
 <h1><%=@inspiration.content%></h1>
 
-<div class="row-fluid">
+<div class="row-fluid photos">
   <div class="span12">
-    <% @photos.each do |photo| %>
-      <div class="photo">
-        <%= image_tag photo.image_url.to_s %>
-        <%= link_to 'Show', photo %>
-        <%= link_to 'Edit', edit_photo_path(photo) %>
-        <%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
+    <% @photos.each_slice(3) do |photos| %>
+    <div class="row-fluid">
+      <% photos.each do |photo| %>
+        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
+      <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
 
 
-<br />
-
 <%= render 'photos/form' %>
+

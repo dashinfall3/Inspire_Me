@@ -13,15 +13,24 @@
         <%= link_to "Inspirations", root_path, id: "logo", class: "brand" %>
         <nav>
           <ul class="nav pull-right">
-            <li><%= link_to "Logout", "#" %></li>
-            <li><%= link_to "Create Question", "#" %></li>
-            <li><%= link_to "Profile", "#" %></li>
+            <% if current_user %>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
+              <li><%= link_to "Add Inspiration", new_inspiration_path %></li>
+              <li><%= link_to "Profile", "#" %></li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 <div class="container-fluid main-container">
+  <p class="notice"><%= notice %></p>
+  <% if alert %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
   <%= yield %>
 </div>
 </body>

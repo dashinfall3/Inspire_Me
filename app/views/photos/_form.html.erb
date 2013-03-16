@@ -1,5 +1,5 @@
 <div class="photo-form">
-  <%= form_for(@photo) do |f| %>
+  <%= form_for @photo do |f| %>
     <% if @photo.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -12,14 +12,14 @@
       </div>
     <% end %>
     <div class="row-fluid">
-      <div class="span2">
+      <div class="span3">
         <%= f.file_field :image %>
       </div>
       <div class="span3">
         <%= f.text_field :caption, :placeholder => "caption" %>
       </div>
       <div class="span3">
-        <%= f.submit :class => 'btn' %>
+        <%= f.submit :class => 'btn', :id => 'photo-button' %>
       </div>  
   <% end %>
 </div>
