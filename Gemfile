@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'carrierwave_direct'
 gem 'rmagick'
+gem 'devise'
 gem 'fog'
 
 # Gems used only for assets and not required
