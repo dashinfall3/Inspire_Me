@@ -1,0 +1,19 @@
+<h1>Welcome, <%= @user.username %>!</h1>
+
+<h4>You've shared <%= pluralize(@user.photos.count, "photo") %></h4>
+
+
+
+<div class="row-fluid photos">
+  <div class="span12">
+    <% @user.photos.each_slice(3) do |photos| %>
+    <div class="row-fluid">
+      <% photos.each do |photo| %>
+        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<%= render 'photos/form' %>

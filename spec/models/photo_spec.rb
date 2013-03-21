@@ -1,22 +1,15 @@
 require 'spec_helper'
 
 describe Photo do
+  
+  it { should have_db_column(:caption) }
+  it { should have_db_column(:image) }
+  it { should respond_to(:caption) }
+  it { should respond_to(:image) }
 
-  let(:photo) {Photo.new(:caption => "sunset")}
+  it { should ensure_length_of(:caption).is_at_most(140) }
 
-  context 'creating new photos' do
+  it { should belong_to(:inspiration)}
+  it { should belong_to(:user) }
 
-    it { should respond_to(:caption) }
-
-    it {should respond_to(:image) }
-
-    it 'does not accept captions over 140 characters' do
-      photo.caption = "a" * 150
-      photo.should_not be_valid
-    end
-  end
-
-  context 'has correct model associations' do
-    it {should belong_to(:inspiration)}
-  end
 end
