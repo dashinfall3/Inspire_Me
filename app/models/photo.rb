@@ -3,4 +3,5 @@ class Photo < ActiveRecord::Base
   attr_accessible :image, :caption
   mount_uploader :image, ImageUploader
   validates :caption, :length => {:maximum => 140}
+  validates_presence_of :image
 end
