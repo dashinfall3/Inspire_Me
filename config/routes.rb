@@ -1,6 +1,8 @@
 InspireMe::Application.routes.draw do
   devise_for :users
 
+  resources :users, :only => [:show, :index]
+
   root :to => 'static_pages#index'
 
   resources :inspirations
