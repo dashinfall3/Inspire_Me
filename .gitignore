@@ -16,5 +16,5 @@
 /tmp
 
 # Ignore yaml file with S3 keys
-/config/aws.yml
+/config/s3.yml
 
