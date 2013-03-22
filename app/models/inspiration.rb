@@ -10,6 +10,7 @@ class Inspiration < ActiveRecord::Base
   has_many :users, :through => :inspiration_users
   belongs_to :creator, :class_name => "User"
 
+
 def self.daily_inspiration
 	#send your emails to all users using sidekiq
 	inspiration = Inspiration.first
@@ -19,5 +20,6 @@ def self.daily_inspiration
 	end
 	#InspirationsWorker.perform_async(@inspiration.id)
 end
+
 
 end
