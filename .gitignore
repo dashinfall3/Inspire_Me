@@ -18,3 +18,5 @@
 # Ignore yaml file with S3 keys
 /config/s3.yml
 
+#Ignore public images files
+/public/uploads
