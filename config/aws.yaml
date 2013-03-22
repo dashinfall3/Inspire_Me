@@ -1,6 +1,0 @@
-
-# put the following data in config/aws.yml
-development:
-  AWS_ACCESS_KEY_ID: 'AKIAIN3K76RPQZW4TKWQ'
-  AWS_SECRET_ACCESS_KEY: '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'
-  AWS_S3_BUCKET: Inspire_Me 
