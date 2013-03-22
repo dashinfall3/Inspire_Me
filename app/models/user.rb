@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     InspirationUser.create(:user_id => self.id, :inspiration_id => photo.inspiration.id, :photo_id => photo.id)
   end
 
+  def admin?
+    self.admin == true
+  end
+
   private
 
   def downcase_email!
