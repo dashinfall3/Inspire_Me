@@ -20,3 +20,5 @@
 
 #Ignore public images files
 /public/uploads
+
+#Ignore misc
