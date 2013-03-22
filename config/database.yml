@@ -14,4 +14,4 @@ production:
   adapter: postgresql
   encoding: unicode
   database: review_me_production
-  pool: 5
+  pool: 25
