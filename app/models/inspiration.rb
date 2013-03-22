@@ -5,16 +5,17 @@ class Inspiration < ActiveRecord::Base
                       :uniqueness => true
 
   has_many :photos
-end
+
 
 
 def self.daily_inspiration
 	#send your emails to all users using sidekiq
-	@inspiration = Inspiration.first
+	inspiration = Inspiration.first
 
-	#send email code heerrrre!!!!
-
-
-
+	User.all.each do |user|
+		Notifier.inspiration_email(user, inspiration).deliver
+	end
 	#InspirationsWorker.perform_async(@inspiration.id)
+end
+
 end
