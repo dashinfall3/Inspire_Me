@@ -7,6 +7,9 @@ InspireMe::Application.routes.draw do
 
   resources :inspirations
   resources :photos
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: '/sidekiq'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
