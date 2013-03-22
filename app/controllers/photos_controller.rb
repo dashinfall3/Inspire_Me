@@ -22,6 +22,7 @@ class PhotosController < ApplicationController
     @photo.user = current_user
     respond_to do |format|
       if @photo.save
+        current_user.add_as_participant(@photo)
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
         format.json { render json: @photo, status: :created, location: @photo }
       else
