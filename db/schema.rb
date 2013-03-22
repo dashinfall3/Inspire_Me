@@ -11,12 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321213501) do
+ActiveRecord::Schema.define(:version => 20130322215351) do
+
+  create_table "inspiration_users", :force => true do |t|
+    t.integer  "user_id",        :null => false
+    t.integer  "inspiration_id", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "photo_id"
+  end
+
+  add_index "inspiration_users", ["inspiration_id", "user_id"], :name => "index_inspiration_users_on_inspiration_id_and_user_id", :unique => true
 
   create_table "inspirations", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "status"
+    t.integer  "creator_id"
   end
 
   create_table "photos", :force => true do |t|
