@@ -21,6 +21,7 @@ class InspirationsController < ApplicationController
 
   def show
     @inspiration = Inspiration.find(params[:id])
+    @photo = Photo.new
   end
 
 end

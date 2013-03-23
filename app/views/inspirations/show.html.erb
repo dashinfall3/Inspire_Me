@@ -2,15 +2,16 @@
 
 <div class="row-fluid photos">
   <div class="span12">
-    <% if @inspiration.photo.any? %>
+    <% if @inspiration.photos.any? %>
 	    <% @inspiration.photos.each_slice(3) do |photos| %>
 	    <div class="row-fluid">
 	      <% photos.each do |photo| %>
 	        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
 	      <% end %>
 	    </div>
+	    <% end %>
 	  <% else %>
-	  	Need dem photos
+	  	Need to add some photos
 	  <% end %>
   </div>
 </div>
