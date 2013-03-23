@@ -1,17 +1,7 @@
-<h1><%=@inspiration.content%></h1>
-
-<div class="row-fluid photos">
-  <div class="span12">
-    <% @photos.each_slice(3) do |photos| %>
-    <div class="row-fluid">
-      <% photos.each do |photo| %>
-        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
-      <% end %>
-    </div>
+<div id='container'>
+  <% @photos.each do |photo| %>
+    <div class='item'><%= image_tag photo.image_url.to_s  %></div>
   <% end %>
-  </div>
 </div>
 
-
 <%= render 'photos/form' %>
-
