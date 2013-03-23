@@ -7,5 +7,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @photo = Photo.new
   end
-
 end

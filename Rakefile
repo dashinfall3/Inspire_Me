@@ -8,10 +8,3 @@ InspireMe::Application.load_tasks
 
 
 
-task :daily_inspiration => :environment do
-  Inspiration.daily_inspiration
-end
-
-task :daily_mural => :environment do
-  Inspiration.daily_mural
-end
