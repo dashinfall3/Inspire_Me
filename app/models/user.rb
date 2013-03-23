@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     self.admin == true
   end
 
+  def regular
+    self.admin == false
+  end
+
   private
 
   def downcase_email!
