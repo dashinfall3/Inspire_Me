@@ -25,6 +25,8 @@ before_filter :admin?, :only => [:index]
 
   def show
     @inspiration = Inspiration.find(params[:id])
+    @photos = @inspiration.photos
+    @photo = Photo.new
   end
 
   def index
