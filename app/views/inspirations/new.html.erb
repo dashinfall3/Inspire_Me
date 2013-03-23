@@ -1,0 +1,6 @@
+<h1> Add an inspiration </h1>
+
+<%= form_for @inspiration do |f| %>
+  <%=f.text_field :content, :placeholder => "inspire folks" %>
+  <%=f.submit "inspire the world!" %>
+<% end %>

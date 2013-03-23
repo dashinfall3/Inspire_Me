@@ -5,8 +5,8 @@ class InspirationsController < ApplicationController
   end
 
   def create
-    @inspiration = Inspiration.new(params[:inspiration])
-    if @inspiration.creator.find_by_email('inspireme444@gmail.com')
+    @inspiration = current_user.inspirations_created.build(params[:inspiration])
+    if current_user.admin?
       @inspiration.status = 0
     else
       @inspiration.status = 1
