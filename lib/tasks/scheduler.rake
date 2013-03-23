@@ -1,11 +1,13 @@
 desc "This task is called by the Heroku scheduler add-on"
-task :send_inspiration => :environment do
-  puts "Updating feed..."
+
+task :daily_inspiration => :environment do
   Inspiration.daily_inspiration
-  puts "done."
 end
 
-task :send_mural => :environment do
-	# Inspiration.daily_inspiration
-  #run a model method here
+task :daily_mural => :environment do
+  Inspiration.daily_mural
+end
+
+task :update_current_master_inspiration => :environment do
+  Inspiration.update_current_master_inspiration
 end
