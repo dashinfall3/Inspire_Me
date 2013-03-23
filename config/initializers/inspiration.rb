@@ -1,0 +1,1 @@
+INSPIRATION_STATUS = {0 => "Pending", 1 => "Live", 2 => "Completed"}

@@ -35,9 +35,6 @@
   padding: 5px;
 }
 
-body {
-  background-image: url("asfalt_@2X.png") 
-}
 
 img {
   border: 1px solid red;
@@ -46,4 +43,19 @@ img {
 
 #container {
   margin: 0 auto;
+}
+
+.inspiration_list_item {
+  margin: 15px 0 0 0;
+}
+
+.pending {
+  font-size: 18px;
+  color: orange;
+}
+
+.live {
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
 }
