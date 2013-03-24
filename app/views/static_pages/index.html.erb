@@ -18,7 +18,7 @@
 </div>
 
 <% if current_user %>
-	<%= render 'photos/form' %>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
 <% else %>
 	<div class="photo-form">
 		<div id="choose">

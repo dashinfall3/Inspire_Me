@@ -20,6 +20,7 @@
       <div id ='caption'>
         <%= f.text_field :caption,  :placeholder => "caption" %>
       </div>
+      <%= f.hidden_field :inspiration_id, :value => inspiration.id %>
       <div id ='photo-button',>
         <%= f.submit :class => 'btn',  :value => 'Upload'%>
       </div>  
