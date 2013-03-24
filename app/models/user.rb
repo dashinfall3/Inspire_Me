@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :provider, :uid, :photo_url, :gender, :location
   validates :username, :presence => true
 
   validates :email, :uniqueness => { :case_sensitive => false }
@@ -31,6 +31,22 @@ class User < ActiveRecord::Base
 
   def regular
     self.admin == false
+  end
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(username:auth.extra.raw_info.name,
+                           provider:auth.provider,
+                           uid:auth.uid,
+                           email:auth.info.email,
+                           password:Devise.friendly_token[0,20],
+                           photo_url:auth.info.image,
+                           gender:auth.extra.raw_info.gender,
+                           location:auth.info.location
+                           )
+    end
+    user
   end
 
   private

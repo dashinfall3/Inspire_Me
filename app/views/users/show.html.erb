@@ -1,19 +1,33 @@
-<h1>Welcome, <%= @user.username %>!</h1>
-
-<h4>You've shared <%= pluralize(@user.photos.count, "photo") %></h4>
-
-
-
-<div class="row-fluid photos">
-  <div class="span12">
-    <% @user.photos.each_slice(3) do |photos| %>
-    <div class="row-fluid">
-      <% photos.each do |photo| %>
-        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
-      <% end %>
-    </div>
-  <% end %>
-  </div>
+<div id='page-container'>
+	<div class='row-fluid'>
+		<div class="span1">
+			<% unless @user.photo_url.nil? %>
+				<%= image_tag(@user.photo_url) %>
+			<% end %>
+		</div>
+		<div class="span11">
+			<h1><%= @user.username %></h1>
+		</div>
+	</div>
+	<h2>Inspirations you've created</h2>
+		<% if @user.inspirations_created.any? %>
+			<% @user.inspirations_created.each do |inspiration| %>
+				<%= inspiration.content %>
+			<% end %>
+		<% else %>
+			Start inspiring your friends. <%=link_to "Create an inspiration", new_inspiration_path %>
+		<% end %>
+	<h2>You've participated in <%= pluralize(@user.photos.count, "inspiration") %></h2>
+	<div class="row-fluid photos">
+	  <div class="span12">
+	    <% @user.photos.each_slice(3) do |photos| %>
+	    <div class="row-fluid">
+	      <% photos.each do |photo| %>
+	        <%= render :partial => 'shared/photo_profile', :locals => {:photo => photo} %>
+	      <% end %>
+	    </div>
+	  <% end %>
+	  </div>
+	</div>
 </div>
 
-<%= render 'photos/form' %>

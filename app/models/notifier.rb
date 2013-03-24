@@ -5,13 +5,13 @@ class Notifier < ActionMailer::Base
   def daily_inspiration_email(user, inspiration)
   	@inspiration = inspiration
     mail( :to => user.email,
-    :subject => "Inspiration Email" )
+    :subject => "Daily inspiration: Let's create something beautiful together today." )
   end
 
   def daily_mural_email(user, inspiration)
     @inspiration = inspiration
     mail( :to => user.email,
-        :subject => "Mural Email" )
+        :subject => "Your daily inspiration. See what the world made today." )
   end
 
 end
