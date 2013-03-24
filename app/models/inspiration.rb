@@ -23,7 +23,6 @@ class Inspiration < ActiveRecord::Base
 
   	User.all.each do |user|
   		Notifier.daily_inspiration_email(user, inspiration).deliver
-      puts "sending email to #{user.username}"
   	end
 
     #send your emails to all users using sidekiq
@@ -59,8 +58,7 @@ class Inspiration < ActiveRecord::Base
   end
 
   def self.admin_inspirations
-    admins = User.where(:admin => true)
-    Inspiration.where(:creator_id => admins)
+    Inspiration.where(:creator_id => User.admins)
   end
 
 
