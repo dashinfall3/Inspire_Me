@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(params[:photo])
-    @photo.inspiration = @inspiration = Inspiration.live.first
+    @photo.inspiration = @inspiration = Inspiration.admin_inspirations.live.first
     @photo.user = current_user
     respond_to do |format|
       if @photo.save
