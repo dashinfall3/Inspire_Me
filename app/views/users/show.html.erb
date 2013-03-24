@@ -1,5 +1,7 @@
 <h1>Welcome, <%= @user.username %>!</h1>
-
+<% unless @user.photo_url.nil? %>
+	<%= image_tag(@user.photo_url) %>
+<% end %>
 <h4>You've shared <%= pluralize(@user.photos.count, "photo") %></h4>
 
 

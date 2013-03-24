@@ -11,6 +11,8 @@ gem 'devise'
 gem 'fog'
 gem 'pg'
 gem 'sidekiq'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 gem 'thin'
 
