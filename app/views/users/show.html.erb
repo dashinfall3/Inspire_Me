@@ -1,10 +1,10 @@
 <div id='page-container'>
 	<div class='row-fluid'>
-		<div class="span1">
-			<% unless @user.photo_url.nil? %>
+		<% unless @user.photo_url.nil? %>
+			<div class="span1">
 				<%= image_tag(@user.photo_url) %>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 		<div class="span11">
 			<h1><%= @user.username %></h1>
 		</div>
