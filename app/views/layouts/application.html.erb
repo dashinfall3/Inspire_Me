@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker|Playfair+Display|Gloria+Hallelujah|Esteban|Handlee|Strait|Original+Surfer|Alike' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -28,6 +29,7 @@
     </div>
   </header>
 <div class="container-fluid main-container">
+  <div id='header-backdrop'></div>
   <p class="notice"><%= notice %></p>
   <% if alert %>
     <p class="alert"><%= alert %></p>
