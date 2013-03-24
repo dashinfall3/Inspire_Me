@@ -16,6 +16,7 @@ class Inspiration < ActiveRecord::Base
 
   scope :pending, where(:status => PENDING)
   scope :live, where(:status => LIVE)
+  scope :complete, where(:status => COMPLETE)
 
   
   def self.daily_inspiration
@@ -59,6 +60,10 @@ class Inspiration < ActiveRecord::Base
 
   def self.admin_inspirations
     Inspiration.where(:creator_id => User.admins)
+  end
+
+  def self.next_inspiration
+    Inspiration.admin_inspirations.pending.first
   end
 
 
