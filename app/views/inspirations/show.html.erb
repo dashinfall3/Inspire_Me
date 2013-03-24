@@ -1,0 +1,7 @@
+<div id='container'>
+  <% @photos.each do |photo| %>
+    <div class='item'><%= image_tag photo.image_url.to_s  %></div>
+  <% end %>
+</div>
+
+<%= render 'photos/form' %>
