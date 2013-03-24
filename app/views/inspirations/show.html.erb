@@ -16,5 +16,12 @@
   </div>
 </div>
 
-
-<%= render 'photos/form' %>
+<% if current_user %>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
+<% else %>
+	<div class="photo-form">
+		<div id="choose">
+			<%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
+		</div>
+	</div>
+<% end %>
