@@ -11,8 +11,8 @@ gem 'devise'
 gem 'fog'
 gem 'pg'
 gem 'sidekiq'
-
 gem 'thin'
+
 
 group :development do
   gem 'quiet_assets'
@@ -23,18 +23,20 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'bootstrap-sass'
-
   gem 'uglifier', '>= 1.0.3'
 end
+
 group :test, :development do
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
