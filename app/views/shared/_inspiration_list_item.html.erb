@@ -1,0 +1,16 @@
+<div class="inspiration_list_item row-fluid">
+	<%#= inspiration_list_item_counter + 1 %> 
+	<div class="span1">
+		<% if inspiration_list_item == Inspiration.next_inspiration %>
+			<div class="live">NEXT UP</div>
+		<% elsif inspiration_list_item.status == 1 %> 
+			<span class="live"><%= INSPIRATION_STATUS[inspiration_list_item.status] %></span>  
+		<% else %>
+			<span class="pending"><%= INSPIRATION_STATUS[inspiration_list_item.status] %></span> 
+		<% end %>
+	</div>
+	<div class="span9">
+		<%=link_to inspiration_list_item.content, inspiration_list_item %> 
+		<div>by <%=link_to inspiration_list_item.creator.username, inspiration_list_item.creator %></div>
+	</div>
+</div>
