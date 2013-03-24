@@ -3,7 +3,7 @@
     <%= image_tag photo.image_url.to_s %>
     <div class="row-fluid caption">
       <div class="span11 caption-text">
-        <%= photo.caption %>
+        <%= photo.inspiration.content %>
       </div>
       <div class="span1">
         <% if photo.user == current_user %>

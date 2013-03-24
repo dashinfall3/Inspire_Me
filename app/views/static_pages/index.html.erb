@@ -1,28 +1,28 @@
-<div id='container'>
-  <h1><%=@inspiration.content%></h1>
-  <% @photos.each do |photo| %>
-    <div class='item'>
-      <%= image_tag photo.image_url.to_s  %>
-      <div class="row-fluid caption">
-        <div class="span11 caption-text">
-          <%= photo.caption %>
-        </div>
-        <div class="span1 caption-delete">
-          <%= link_to 'x', photo, method: :delete %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<div id="page-container">
+	<h1><%=@inspiration.content%></h1>
+	<div id='container'>
+	  <% @photos.each do |photo| %>
+	    <div class='item'>
+	      <%= image_tag photo.image_url.to_s  %>
+	      <div class="row-fluid caption">
+	        <div class="span11 caption-text">
+	          <%= photo.caption %>
+	        </div>
+	        <div class="span1 caption-delete">
+	          <%= link_to 'x', photo, method: :delete %>
+	        </div>
+	      </div>
+	    </div>
+	  <% end %>
+	</div>
 </div>
 
-<<<<<<< HEAD
 <% if current_user %>
 	<%= render 'photos/form' %>
 <% else %>
-
-
+	<div class="photo-form">
+		<div id="choose">
+			<%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
+		</div>
+	</div>
 <% end %>
-=======
-<%= render 'photos/form' %>
-
->>>>>>> master
