@@ -17,13 +17,11 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(params[:photo])
-    @photo.inspiration = @inspiration = Inspiration.admin_inspirations.live.first
-    @photo.user = current_user
+    @photo = current_user.photos.build(params[:photo])
     respond_to do |format|
       if @photo.save
         current_user.add_as_participant(@photo)
-        format.html { redirect_to root_path, notice: 'Photo was successfully created.' }
+        format.html { redirect_to :back, notice: 'Photo added to inspiration.' }
         format.json { render json: @photo, status: :created, location: @photo }
       else
         format.html { render action: "new" }
