@@ -1,7 +1,18 @@
 <div id='container'>
   <% @photos.each do |photo| %>
-    <div class='item'><%= image_tag photo.image_url.to_s  %></div>
+    <div class='item'>
+      <%= image_tag photo.image_url.to_s  %>
+      <div class="row-fluid caption">
+        <div class="span11 caption-text">
+          <%= photo.caption %>
+        </div>
+        <div class="span1 caption-delete">
+          <%= link_to 'x', photo, method: :delete %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
 <%= render 'photos/form' %>
+

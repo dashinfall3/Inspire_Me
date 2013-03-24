@@ -11,15 +11,25 @@
         </ul>
       </div>
     <% end %>
-    <div class="row-fluid">
-      <div class="span3">
-        <%= f.file_field :image %>
+    <div>
+      <div>
+        <div class="wrapper">
+          <%= f.file_field :image, :id => 'file_field' %>
+        </div>
       </div>
-      <div class="span3">
-        <%= f.text_field :caption, :placeholder => "caption" %>
+      <div id ='caption'>
+        <%= f.text_field :caption,  :placeholder => "caption" %>
       </div>
-      <div class="span3">
-        <%= f.submit :class => 'btn', :id => 'photo-button' %>
+      <div id ='photo-button',>
+        <%= f.submit :class => 'btn',  :value => 'Upload'%>
       </div>  
   <% end %>
+</div>
+
+<div id="choose">
+  <button id="file_field_button">Choose a Photo</button>
+</div>
+
+<div id="uploader">
+  <button id="photo_upload_button">Upload</button>
 </div>
