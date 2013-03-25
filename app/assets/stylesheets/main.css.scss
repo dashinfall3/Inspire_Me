@@ -1,14 +1,13 @@
 @import "bootstrap";
 
-
-///////////  header - start //////////////
+///////////  header - start ///////////////////
 .omar-header {
   position: fixed;
-  height: 45px;
+  height: 46px;
   width: 100%;
-  border-bottom: 1px solid black;
   background-color: rgba(248, 254, 255, 0.9);
   z-index: 1;
+  border-bottom: 1px solid #ddd;
 }
 
 .omar-header a {
@@ -16,113 +15,118 @@
    text-decoration: none; 
 }
 
-.omar-header a:hover {
+.omar-header #logo:hover {
    color: #000;  
 }
 
 #logo { 
-  padding: 12px 0 0 25%; 
+  padding: 13px 0 0 40%; 
   font-family: 'Petit Formal Script', cursive; 
-  font-size: 2em;
+  font-size: 2.2em;
   display: inline-block;
 }
 
 
-////////////  header right nav /////////
+////////////  header right nav ////////////////
 
-ul.mobile-nav{
+.mobile-nav {
   float: right;
   position:relative;
-  right: 10%;
+  right: 0%;
+  border-right: solid 0px;
 }
 
-.mobile-nav .mobile-button{
-  display: none;
+.mobile-nav li {
+  float: right;
+  margin-right: 4px;
 }
 
-.mobile-nav .links li {
- display: inline-block;
- margin: 13px 0 0 10px;
-}
-
-.links a{
-  white-space:nowrap;
+.mobile-nav a {
+  text-align: center;
+  width: 100px;
   display: block;
+  padding: 13px;
+  font-size: 1.5em;
+} 
+
+.mobile-nav a:hover{
+  background-color: #E8F7FA;
 }
 
-/////////////  Responsive Design - header /////////
+//////////// end header right nav /////////////
+//////////// end header for desktops ////////// 
 
-//////////// Ipad view ///////////////////
+/////////////  Responsive Design - header /////
+//////////// Laptop view //////////////////////
+@media screen and (max-width: 1200px) {
+ #logo {
+  padding-left: 30%; 
+ }
+ .mobile-nav a {
+  font-size: 1.2em;
+ }
+}
+
+//////////// Ipad view ////////////////////////
 @media screen and (max-width: 768px) {
-   #logo {
-    padding-left: 20%; 
-   }
-   ul.mobile-nav{
-     margin-top: 13px;
-     right: 20%;
-   }
-
-   .mobile-nav li{
-     float:right;
-     position:relative;
-   }
-
-   .mobile-nav .mobile-button{
-     display: block;
-     text-decoration: none;
-   }
-
-   .mobile-nav .links {
-     list-style:none;
-     margin-left: 0px;
-     position:absolute;
-     left: -9999px;
-   }
-
-   .mobile-nav .links li {
-     float:none;
-     margin: 3px 0;
-   }
-
-   .mobile-nav li .links {
-     left:0;
-   }
-
-   .mobile-nav .links a{
-    width: 110px;
-    text-align:center;
-    border: solid 1px black;
-    border-radius: 5px;
-    padding: 2px;
-    background-color: #009B77;
-    color: #fff;
-    font-size: 0.8em;
-   }
+  #logo {
+    font-size: 2em;
+    padding-left: 14%; 
+  }
+  .mobile-nav a {
+   font-size: 1.2em;
+   width: 80px;
+ }
 }
 
-
-/////////////////  mobile /////////////////////////
+///////////////// Mobile view //////////////////
 
 @media screen and (max-width: 480px) {
-   #logo {
-    padding-left: 15%; 
+  #logo {
+    padding-left: 7%; 
+    font-size: 1.6em;
    }
+  .mobile-nav a {
+    font-size: 1.2em;
+    white-space:nowrap;
+    width: 70px;
+ }
+}
 
+///////////////// Mobile view //////////////////
 
+@media screen and (max-width: 340px) {
+  #logo {
+    padding-left: 3%; 
+    font-size: 1.4em;
    }
+  .mobile-nav a {
+    padding: 13px 10px 0px 0px;
+    font-size: 1em;
+    white-space:nowrap;
+    width: 60px;
+ }
+}
+
+//////////////// end responsive design ////////
+//////////////// end header ///////////////////
 
 
 
-/////////////////   finish responsive design ////////
-////////////////    finish header ///////////////////
+//////////////// start body ///////////////////
 
+.text{
+  height: 50px;
+  background-color: red;
+  width: 300
+
+}
 .messages .notice{
   margin: 0px;
 }
 
 #page-container {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 60px;
 }
 
 .photos {
@@ -160,8 +164,6 @@ body {
 }
 
 img {
-  border-bottom: solid white 1px;
-  padding-bottom: 2px;
   margin: 0;
 }
 
@@ -188,6 +190,7 @@ div.caption {
   
   border: solid #DDDDDD 1px;
   background: white;
+  margin: 2px;
   
 }
 

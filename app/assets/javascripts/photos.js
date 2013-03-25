@@ -22,16 +22,8 @@
 
 
 $(document).ready(function(){
-  var $container = $('#container');
-  $container.imagesLoaded(function(){
-    $container.masonry({
-      columnWidth: 1,
-      isAnimated: true,
-      isFitWidth: true
-    });
-  });
-
-  $("#file_field_button").click(function(){
+    $("#file_field_button").click(function(){
+    debugger
     $("#file_field").click();
   });
 
@@ -44,4 +36,17 @@ $(document).ready(function(){
     $('#caption').show();
     $('#photo_upload_button').show(); 
   });
+
+
+  var $container = $('#container');
+  $container.imagesLoaded(function(){
+    $container.masonry({
+      columnWidth: 0,
+      isAnimated: true,
+      isFitWidth: true
+    });
+  });
+
+
 });
+
