@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :inspiration_users
   has_many :inspirations, :through => :inspiration_users
   has_many :inspirations_created, :class_name => 'Inspiration', :foreign_key => 'creator_id'
+  has_many :votes, :foreign_key => 'voter_id'
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -47,6 +48,10 @@ class User < ActiveRecord::Base
                            )
     end
     user
+  end
+
+  def voted_on?(photo)
+    photo.votes.where(:voter_id => self.id).any?
   end
 
   private
