@@ -4,9 +4,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Inspire Me's Daily Inspiration</h1>
-    <%= DateTime.now.strftime("%B %d, %Y")%>: <h3><%= @inspiration.id %></h3>
-    
-    <%= link_to 'Check out Mural!', 'frozen-cove-1468.herokuapp.com' %>
+    <h1>Inspire Me</h1>
+    <%= DateTime.now.strftime("%B %d, %Y")%>: 
+    <h2><%= @inspiration.content %></h2>
+    <h4> Check out what we all created today. </h4>
+    <%= link_to "Today's mural!", 'frozen-cove-1468.herokuapp.com' %>
   </body>
 </html>
