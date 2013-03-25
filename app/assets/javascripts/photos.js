@@ -1,26 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-
-// var Photo = {
-//   init: function(){
-//     $('form.new_photo').on('ajax:success', this.appendPhoto);
-//     $('form.new_photo').on('ajax:error', this.showErrors);
-//   },
-
-//   appendPhoto: function(event, data){
-//     debugger
-//     $('.photos').append(data);
-//   },
-
-//   showErrors: function(xhr, data, status) {
-//     debugger
-//     $('.photos').append(data);
-//   }
-
-// }
-
-
-
 $(document).ready(function(){
   var $container = $('#container');
   $container.imagesLoaded(function(){
@@ -31,17 +8,37 @@ $(document).ready(function(){
     });
   });
 
-  $("#file_field_button").click(function(){
-    $("#file_field").click();
-  });
+    var chooseButton = new Button;
+    chooseButton.connect("#file_field_button", "#file_field");
+    
+    var upload = new Button;
+    upload.connect("#photo_upload_button", ".btn");
 
-  $("#photo_upload_button").click(function(){
-    $(".btn").click();
-  });
+    var photo = new Image;
+    photo.choose("#file_field");
 
-  $("#file_field").val('').change(function(){
+});
+
+function Button() {};
+
+Button.prototype.connect = function(selector1, selector2) {
+  $(selector1).click(function(){
+    $(selector2).click();
+  });
+};
+
+function Image() {};
+
+Image.prototype.choose = function(selector) {
+  $(selector).val('').change(function(){
     $("#file_field_button").hide();
     $('#caption').show();
     $('#photo_upload_button').show(); 
-  });
-});
+ }); 
+};
+
+
+
+
+
+
