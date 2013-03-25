@@ -1,25 +1,137 @@
 @import "bootstrap";
 
-#logo {
-  font-size: 36px;
-  color: white;
-  opacity: 1;
+
+///////////  header - start //////////////
+.omar-header {
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: rgba(248, 254, 255, 0.9);
   z-index: 1;
 }
 
-.pull-right li a{
-  color: white;
+.omar-header a {
+   color: #009B77; 
+   text-decoration: none; 
 }
 
-.main-container {
-  padding-top: 0px;
-  padding-bottom: 175px;
+.omar-header a:hover {
+   color: #000;  
 }
 
-.signup-top {
-  border-bottom: 1px #ccc solid;
+#logo { 
+  padding: 12px 0 0 25%; 
+  font-family: 'Petit Formal Script', cursive; 
+  font-size: 2em;
+  display: inline-block;
 }
 
+
+////////////  header right nav /////////
+
+ul.mobile-nav{
+  float: right;
+  position:relative;
+  right: 10%;
+}
+
+.mobile-nav .mobile-button{
+  display: none;
+}
+
+.mobile-nav .links li {
+ display: inline-block;
+ margin: 13px 0 0 10px;
+}
+
+.links a{
+  white-space:nowrap;
+  display: block;
+}
+
+/////////////  Responsive Design - header /////////
+
+//////////// Ipad view ///////////////////
+@media screen and (max-width: 768px) {
+   #logo {
+    padding-left: 20%; 
+   }
+   ul.mobile-nav{
+     margin-top: 13px;
+     right: 20%;
+   }
+
+   .mobile-nav li{
+     float:right;
+     position:relative;
+   }
+
+   .mobile-nav .mobile-button{
+     display: block;
+     text-decoration: none;
+   }
+
+   .mobile-nav .links {
+     list-style:none;
+     margin-left: 0px;
+     position:absolute;
+     left: -9999px;
+   }
+
+   .mobile-nav .links li {
+     float:none;
+     margin: 3px 0;
+   }
+
+   .mobile-nav li .links {
+     left:0;
+   }
+
+   .mobile-nav .links a{
+    width: 110px;
+    text-align:center;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #009B77;
+    color: #fff;
+    font-size: 0.8em;
+   }
+}
+
+
+/////////////////  mobile /////////////////////////
+
+@media screen and (max-width: 480px) {
+   #logo {
+    padding-left: 15%; 
+   }
+
+
+   }
+
+
+
+/////////////////   finish responsive design ////////
+////////////////    finish header ///////////////////
+
+.messages .notice{
+  margin: 0px;
+}
+
+#page-container {
+  padding-top: 100px;
+}
+
+.photos {
+  padding-top: 500px;
+}
+
+p {
+  bottom-margin: -10px;
+}
+  
 .photo {
   margin: 20px 0 0 0;
 }
@@ -42,7 +154,8 @@
 }
 
 body {
-  background-image: url("debut_light.png") 
+  font-family: 'Esteban', serif;
+  background-color: #f1f1f1;
 }
 
 img {
@@ -65,44 +178,17 @@ div.caption {
   padding-bottom: 120px;
 }
 
-#page-container {
-  padding: 10px 0 200px 10px;
-}
-
 .container-fluid{
   padding: 0;
-
+  font-family: 'Esteban', serif;
 }
 
 #container .item {
-  padding: 10px;
+  
   border: solid #DDDDDD 1px;
   background: white;
   
 }
-
-.navbar {
-  opacity: 0.85;
-  background: #000;
-  height: 60px;
-  padding-top: 20px;
-}
-
-#header-backdrop {
-  width: 100%;
-  height: 80px;
-  background: #000;
-}
-
-.navbar-inner{
-  width: 98%;
-  margin: 0px auto;
-}
-
-.footer {
-  background: black;
-}
-
 
 #file_field_button {
   background-color: #009B77;
