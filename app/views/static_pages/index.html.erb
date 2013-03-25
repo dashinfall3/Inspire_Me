@@ -1,26 +1,10 @@
 <div id="page-container">
-	<div class="row-fluid signup-top">
-		<div id="choose" class="span6">
-			<%= button_to "Login", new_user_session_path, :id => 'file_field_button_reg', :method=> 'get'%>
-		</div>
-		<div id="choose" class="span6">
-			<%= button_to "Join Inspire Me", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
-		</div>
-	</div>
 	<h1><%=@inspiration.content%></h1>
 	<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@inspiration.id%>" data-send="true" data-width="450" data-show-faces="true"></div>
 	<div id='container'>
 	  <% @photos.each do |photo| %>
 	    <div class='item'>
 	      <%= image_tag photo.image_url.to_s  %>
-	      <div class="row-fluid caption">
-	        <div class="span11 caption-text">
-	          <%= photo.caption %>
-	        </div>
-	        <div class="span1 caption-delete">
-	          <%= link_to 'x', photo, method: :delete %>
-	        </div>
-	      </div>
 	    </div>
 	  <% end %>
 	</div>
