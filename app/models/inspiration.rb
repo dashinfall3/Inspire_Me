@@ -1,7 +1,9 @@
 class Inspiration < ActiveRecord::Base
-  PENDING = 0 
-  LIVE = 1
-  COMPLETE = 2
+  STATUS = 
+    { :pending => 0, 
+      :live => 1,
+      :complete => 2
+    }
   
   attr_accessible :content, :status
   validates :content, :presence => true,
@@ -14,10 +16,19 @@ class Inspiration < ActiveRecord::Base
   has_many :users, :through => :inspiration_users
   belongs_to :creator, :class_name => "User"
 
-  scope :pending, where(:status => PENDING)
-  scope :live, where(:status => LIVE)
-  scope :complete, where(:status => COMPLETE)
+  # scope :pending, where(:status => PENDING)
+  # scope :live, where(:status => LIVE)
+  # scope :complete, where(:status => COMPLETE)
 
+  #implemented method missing for practice
+
+  def self.method_missing(name, *args, &block)
+    if name == (:pending || :live || :complete)
+      Inspiration.where(:status => STATUS[name])
+    else
+      super
+    end
+  end
   
   def self.daily_inspiration
   	inspiration = Inspiration.current_master_inspiration
