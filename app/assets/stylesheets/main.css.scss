@@ -16,6 +16,10 @@
   padding-bottom: 175px;
 }
 
+.signup-top {
+  border-bottom: 1px #ccc solid;
+}
+
 .photo {
   margin: 20px 0 0 0;
 }
@@ -62,7 +66,7 @@ div.caption {
 }
 
 #page-container {
-  padding: 10px;
+  padding: 10px 0 200px 10px;
 }
 
 .container-fluid{
@@ -102,6 +106,18 @@ div.caption {
 
 #file_field_button {
   background-color: #009B77;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  width: 85%;
+  font-size: 24px;
+  height: 55px;
+}
+
+#file_field_button_reg {
+  background-color: #ddd;
   border: none;
   color: #fff;
   border-radius: 5px;
