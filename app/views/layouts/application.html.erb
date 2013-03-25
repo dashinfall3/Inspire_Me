@@ -27,8 +27,8 @@
         <li><%= link_to "Add photo", new_inspiration_path %></li>
         <li><%= link_to "Profile", current_user %></li>
       <% else %>
-        <li><%= link_to "Sign Up", new_user_session_path %></li>
-        <li><%= link_to "Log in", new_user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign in", new_user_session_path %></li>
       <% end %>
     </ul><!-- end of links --> 
   </header> <!-- end of header -->
