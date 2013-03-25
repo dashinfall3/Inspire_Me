@@ -1,6 +1,8 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
+  user: root
   database: review_me_development
   pool: 5
 
@@ -15,3 +17,4 @@ production:
   encoding: unicode
   database: review_me_production
   pool: 25
+

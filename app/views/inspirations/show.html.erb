@@ -1,27 +1,28 @@
-<h1><%=@inspiration.content%></h1>
+
 
 <div class="row-fluid photos">
+<h1><%=@inspiration.content%></h1>
   <div class="span12">
     <% if @inspiration.photos.any? %>
-	    <% @inspiration.photos.each_slice(3) do |photos| %>
-	    <div class="row-fluid">
-	      <% photos.each do |photo| %>
-	        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
-	      <% end %>
-	    </div>
-	    <% end %>
-	  <% else %>
-	  	Need to add some photos
-	  <% end %>
+        <% @inspiration.photos.each_slice(3) do |photos| %>
+        <div class="row-fluid">
+          <% photos.each do |photo| %>
+            <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
+          <% end %>
+        </div>
+        <% end %>
+      <% else %>
+        Need to add some photos
+      <% end %>
   </div>
 </div>
 
 <% if current_user %>
-	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
+    <%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
 <% else %>
-	<div class="photo-form">
-		<div id="choose">
-			<%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
-		</div>
-	</div>
+    <div class="photo-form">
+        <div id="choose">
+            <%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
+        </div>
+    </div>
 <% end %>
