@@ -4,9 +4,7 @@
 	<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@inspiration.id%>" data-send="true" data-width="450" data-show-faces="true"></div>
 	<div id='container'>
 	  <% @photos.each do |photo| %>
-	    <div class='item'>
-	      <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
-	    </div>
+	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
 	  <% end %>
 	</div>
 	<script> function sendRequestViaMultiFriendSelector() {

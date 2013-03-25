@@ -138,7 +138,6 @@ p {
 }
   
 .photo {
-  margin: 20px 0 0 0;
 }
 
 .photo-form {
@@ -181,17 +180,11 @@ div.caption {
   padding-bottom: 120px;
 }
 
-.container-fluid{
-  padding: 0;
-  font-family: 'Esteban', serif;
-}
 
 #container .item {
-  
   border: solid #DDDDDD 1px;
   background: white;
-  margin: 2px;
-  
+  padding: 0;
 }
 
 #file_field_button {
@@ -204,6 +197,10 @@ div.caption {
   width: 85%;
   font-size: 24px;
   height: 55px;
+}
+
+.item {
+  margin: 0;
 }
 
 #file_field_button_reg {
@@ -224,6 +221,7 @@ div.caption {
 }
 
 #file_field {
+  display:none;
 }
 
 #photo-button {
