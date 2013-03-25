@@ -129,6 +129,25 @@
   padding-top: 60px;
 }
 
+label {
+  margin-bottom: 5px;
+  display: inline;
+}
+
+input {
+  border-radius: 3px;
+
+}
+
+#form-container {
+  padding-top :60px;
+  margin-left: 35%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
 .photos {
   padding-top: 500px;
 }
@@ -220,6 +239,10 @@ div.caption {
   padding-bottom: 25px
 }
 
+.signin-form {
+  margin: 10px 0 0 0;
+}
+
 #file_field {
   display:none;
 }
@@ -277,4 +300,44 @@ div.caption {
   font-size: 18px;
   color: green;
   font-weight: bold;
+}
+
+.facebook-login {
+  margin: 0 0 0 -15px;
+  height: 70px;
+  width: 330px;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  background: #ddd;
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  width: 310px;
+  height: 40px;
+  font-size: 20px;
+}
+
+input[type="email"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="password"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
 }
