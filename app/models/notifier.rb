@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default :from => "Inspire Me"
+  default :from => "team@inspireme.com"
 
   # send a signup email to the user, pass in the user object that contains the user's email address
   def daily_inspiration_email(user, inspiration)

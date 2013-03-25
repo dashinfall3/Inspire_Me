@@ -7,6 +7,7 @@ InspireMe::Application.routes.draw do
 
   resources :inspirations
   resources :photos
+  resources :votes
 
   require 'sidekiq/web'
   mount Sidekiq::Web, at: '/sidekiq'

@@ -1,5 +1,4 @@
-# encoding: utf-8
-
+require 'carrierwave/processing/mini_magick'
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
@@ -16,6 +15,14 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MimeTypes
   process :set_content_type
+
+  # def orient_image
+  #   manipulate! do |image|
+  #     debugger
+  #     image = image.auto_orient
+  #     image
+  #   end
+  # end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

@@ -1,14 +1,22 @@
 <div id="page-container">
+
 	<h1><%=@inspiration.content%></h1>
 	<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@inspiration.id%>" data-send="true" data-width="450" data-show-faces="true"></div>
 	<div id='container'>
 	  <% @photos.each do |photo| %>
 	    <div class='item'>
-	      <%= image_tag photo.image_url.to_s  %>
+	      <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
 	    </div>
 	  <% end %>
 	</div>
+	<script> function sendRequestViaMultiFriendSelector() {
+	  FB.ui({method: 'apprequests',
+	    message: 'My Great Request'
+	  }, requestCallback);
+	} </script>
 </div>
+
+
 
 <% if current_user %>
 	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
@@ -19,3 +27,5 @@
 		</div>
 	</div>
 <% end %>
+
+
