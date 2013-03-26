@@ -17,6 +17,7 @@ $(document).ready(function(){
     var photo = new Image;
     photo.choose("#file_field");
 
+
 });
 
 function Button() {};
@@ -36,4 +37,5 @@ Image.prototype.choose = function(selector) {
     $('#photo_upload_button').show(); 
   }); 
 };
+
 
