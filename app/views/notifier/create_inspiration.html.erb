@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Inspire Me</h1>
+    <%= DateTime.now.strftime("%B %d, %Y")%>: 
+    <h2><%= @inspiration.content %></h2>
+    <h4> Forward this inspiration to your friends and let's build something beautiful together. </h4>
+    <h4>Take a photo of what this represents to you. Be clever, funny, or inspirational. 
+      Let's create something beautiful today. </h4>
+    <%= link_to "Today's mural!", "http://frozen-cove-1468.herokuapp.com/inspirations/#{@inspiration.id}" %>
+  </body>
+</html>
