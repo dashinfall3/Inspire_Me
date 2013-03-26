@@ -50,8 +50,7 @@ Image.prototype.choose = function(selector) {
 
 Image.prototype.chooseMobile = function(selector) {
   $(selector).val('').change(function(){
-    $("#file_field_button_mobile").hide();
-    $('#photo_upload_button_mobile').show(); 
-    $(this).closest('.menu-button').css({'background-color': '#009B77'});
+    $('.btn_mobile').click();
+    $('#myModal').modal();
   }); 
 };
