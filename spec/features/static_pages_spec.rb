@@ -31,7 +31,7 @@ describe 'Static pages' do
       end
 
       it 'should have option to upload photo' do
-        #find button called 'choose a photo'
+        subject.should have_select('button', 'Add Photo')
       end
     end
   
