@@ -7,6 +7,13 @@ $(document).ready(function(){
       isFitWidth: true
     });
   });
+  $('#share-button').click(function() {
+    $('#share-mobile').toggle();
+  });
+
+  $('#share-mobile, .twitter-button').click(function() {
+    $('#share-mobile').hide();
+  });
 
     var chooseButton = new Button;
     chooseButton.connect("#file_field_button", "#file_field");

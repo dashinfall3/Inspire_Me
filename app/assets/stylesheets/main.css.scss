@@ -19,6 +19,38 @@
    color: #000;  
 }
 
+.inspiration-holder {
+  width: 60%;
+  padding: 0 0 0 5%;
+  float: left;
+  margin: -10px 0 0 0;
+}
+
+.share-holder {
+  width: 30%;
+  float: left;
+  background: #f4f4f4;
+  border-radius: 5px;
+  padding: 5px 0 10px 10px;
+}
+
+#share-desktop {
+  display:block
+}
+
+#share-mobile {
+  display: none;
+}
+
+.share-buttons {
+  float:left;
+  margin: 3px 0 0 0;
+}
+
+.facebook-button {
+  margin: 3px 20px 0 0;
+}
+
 #logo { 
   padding: 13px 0 0 1%; 
   font-family: 'Petit Formal Script', cursive; 
@@ -26,12 +58,22 @@
   display: inline-block;
 }
 
+h3 {
+  margin: -10px 0 0 0;
+  padding: 0;
+}
+
 .inspiration {
-  text-align: center;
   color: #777;
   clear: both;
+  padding: 5px 0 10px 0;
 } .brand, .quote {
   font-size: 1em;
+}
+
+#quote-inspire {
+  font-size: 40px;
+  font-family: 'esteban';
 }
 
 
@@ -79,8 +121,7 @@
 }
 
 .fb-like{
-  float: right !important;
-  margin-right: 35px;
+  padding: 3px 0 0 0;
   overflow: hidden;
 }
 
@@ -355,6 +396,22 @@ img {
     margin-left: 5%;
   }
 
+  #quote-inspire {
+    font-size: 24px;
+    width: 95%;
+  }
+
+  #share-desktop {
+    display:none
+  }
+
+  #share-mobile {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+  }
+
 }
 
 ////////// Mobile view landscape mode /////////
@@ -382,6 +439,22 @@ img {
     padding-top:60px;
     margin-left: 5%;
   }
+
+  #quote-inspire {
+    font-size: 24px;
+    width: 95%;
+  }
+
+  #share-desktop {
+    display:none
+  }
+
+  #share-mobile {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+  }
 }
 
 //////////////// end responsive design ////////
@@ -398,6 +471,15 @@ img {
   background: white;
   width: 90%;
   color: black;
+  position: relative;
+}
+
+.profile-bar a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .profile-bar:hover {
@@ -499,6 +581,18 @@ input[type="text"] {
 
 .image {
     
+}
+
+////EXPLORE PAGE /////
+.photo_thumbs {
+  clear: both;
+  padding: 10px 0 0 0;
+}
+
+.photo_thumb {
+  width: 50px;
+  float: left;
+  margin: 0 0 0 5px;
 }
 
 
