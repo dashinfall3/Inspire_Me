@@ -16,13 +16,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MimeTypes
   process :set_content_type
 
-  # def orient_image
-  #   manipulate! do |image|
-  #     debugger
-  #     image = image.auto_orient
-  #     image
-  #   end
-  # end
+  def fix_exif_rotation
+    manipulate! do |img|
+      img.auto_orient
+      img = yield(img) if block_given?
+      img
+    end
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -37,6 +37,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+
+  process :fix_exif_rotation
 
   # Process files as they are uploaded:
   process :resize_to_limit => [500, 500]
