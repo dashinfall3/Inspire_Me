@@ -1,5 +1,6 @@
 # check that aws.yml exists
 if File.exists? Rails.root.join('config', 's3.yml')
+
   data = YAML::load_file(File.open(Rails.root.join('config', 's3.yml')))[Rails.env.to_s]
 
   ENV["AWS_ACCESS_KEY_ID"] ||= data["AWS_ACCESS_KEY_ID"]
