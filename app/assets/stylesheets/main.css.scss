@@ -350,6 +350,11 @@ img {
     display: block;
   }
 
+  #form-container {
+    padding-top :60px;
+    margin-left: 5%;
+  }
+
 }
 
 ////////// Mobile view landscape mode /////////
@@ -372,6 +377,11 @@ img {
   .photo-form {
     display: none;
   }
+
+  #form-container {
+    padding-top:60px;
+    margin-left: 5%;
+  }
 }
 
 //////////////// end responsive design ////////
@@ -386,7 +396,7 @@ img {
   padding: 10px;
   border-radius: 5px;
   background: white;
-  width: 85%;
+  width: 90%;
   color: black;
 }
 
@@ -395,8 +405,8 @@ img {
 }
 
 .content-name {
-  font-size: 20px;
-  padding-top: 15px;
+  font-size: 12px;
+  padding-top: 10px;
   font-family: 'Petit Formal Script', cursive;
   color: #009B77; 
 }
@@ -411,11 +421,11 @@ img {
 }
 
 .profile-title {
-  padding: 25px 40px 0 40px;
+  padding: 10px 0 0 20px;
 }
 
 .profile-subtitle {
-  padding: 0 40px; 
+  padding: 0 20px; 
 }
 
 /////////end STYLING FOR PROFILE PAGE///////////
