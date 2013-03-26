@@ -97,6 +97,22 @@
   padding: 60px 0 0 10px;
 }
 
+.inspire_world {
+  font-family: 'Esteban', serif;
+  font-size: 1.2em;
+  color: #777;
+  text-decoration: none;
+  display: block;
+  background: #B5F5E0;
+  text-align: center;
+  padding: 40px 0 30px 0;
+} 
+
+.inspire_world :hover{
+  text-decoration: none;
+}
+
+
 label {
   margin-bottom: 5px;
   display: inline;
@@ -122,6 +138,10 @@ input {
 
 p {
   bottom-margin: -10px;
+}
+
+.item.masonry-brick{
+  margin: 4px;
 }
 
 img {

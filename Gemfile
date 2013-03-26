@@ -15,7 +15,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'thin'
 gem 'debugger'
-
+gem 'font-awesome-sass-rails'
 
 group :development do
   gem 'quiet_assets'
