@@ -14,7 +14,8 @@ before_filter :admin?, :only => [:index]
     end
     if @inspiration.save
       #deliver email to friends if @inspiration.status == 1
-      redirect_to :back
+      Notifier.create_inspiration(current_user, @inspiration).deliver
+      redirect_to inspiration_path(@inspiration)
     else
       flash[:error] = @inspiration.errors.full_messages
       @admin_inspirations = Inspiration.admin_inspirations

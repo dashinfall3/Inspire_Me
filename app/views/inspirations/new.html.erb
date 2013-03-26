@@ -1,9 +1,11 @@
-<h1>Create an inspiration </h1>
+<div id="page-container">
+	<h1>Create an inspiration </h1>
 
-<%= form_for @inspiration do |f| %>
-	<% if flash[:error] -%>
-	  <p class='error'><%= flash[:error] %></p>
-	<% end -%>
-	<%=f.text_field :content, :placeholder => "inspire folks" %>
-	<%=f.submit "inspire the world!" %>
-<% end %>
+	<%= form_for @inspiration do |f| %>
+		<% if flash[:error] -%>
+		  <p class='error'><%= flash[:error] %></p>
+		<% end -%>
+		<%=f.text_field :content, :placeholder => "inspire folks", :id => "new-inspiration" %>
+		<div><%=f.submit "Next step: send to friends" %></div>
+	<% end %>
+</div>

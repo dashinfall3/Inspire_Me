@@ -14,4 +14,10 @@ class Notifier < ActionMailer::Base
         :subject => "See what the world made today." )
   end
 
+  def create_inspiration(user, inspiration)
+    @inspiration = inspiration
+    mail( :to => user.email,
+        :subject => "Inspire your friends." )
+  end
+
 end

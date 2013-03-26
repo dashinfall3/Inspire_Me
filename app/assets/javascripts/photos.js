@@ -46,7 +46,5 @@ $(document).ready(function(){
       isFitWidth: true
     });
   });
-
-
 });
 

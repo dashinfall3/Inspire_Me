@@ -126,7 +126,7 @@
 }
 
 #page-container {
-  padding-top: 60px;
+  padding: 60px 0 0 10px;
 }
 
 label {
@@ -340,4 +340,8 @@ input[type="text"] {
   border-radius: 5px;
   height: 40px;
   width: 300px;
+}
+
+#new-inspiration {
+  width: 70%;
 }
