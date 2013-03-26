@@ -1,4 +1,5 @@
- <div id="page-container">
+<% if current_user.admin? %>
+<div id="page-container">
 	<h1> Add an inspiration </h1>
 
 	<%= form_for @inspiration do |f| %>
@@ -15,3 +16,18 @@
 	<%= render :partial => '/shared/inspiration_list_item', :collection => @admin_inspirations.live %>
 	<%= render :partial => '/shared/inspiration_list_item', :collection => @admin_inspirations.complete %>st
 </div>
+<% else %>
+<div id="page-container">
+  <h1 class="profile-title">Explore</h1>
+  <div class="row-fluid profile-bar"> 
+  	<div><h3>Today's inspiration:</h3></div>
+    <div class="span9 content-name">
+       <%= @today_inspiration.content %>
+    </div>
+    <%=link_to "", root_path %>
+    <div class="span2 content-date">
+    	<%=@today_inspiration.photo_count %> photos
+    </div>
+  </div>
+  <%= render :partial => 'shared/inspiration_explore_item', :collection => @inspirations %>
+<% end %>

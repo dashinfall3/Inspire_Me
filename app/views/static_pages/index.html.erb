@@ -1,41 +1,49 @@
 <div id="page-container">
-  <%= render 'shared/messages' %>
-  <%= render 'shared/facebook_desktop' %>
-  <div class='inspiration'>
-    <h1><i class='brand'>Inspiration: </i><span class='quote'><%=@inspiration.content%></span></h1>
-  </div>
-  <div id='container'>
+	<%= render 'shared/messages' %>
+	<div class='inspiration row-fluid'>
+		<div class="inspiration-holder">
+			
+			<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
+			<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
+		</div>
+		<div class="share-holder" id="share-desktop">
+			<h3><span class="quote">Inspire friends</span></h3>
+			<%= render 'shared/facebook_desktop' %>
+			<%= render 'shared/twitter_share' %>
+		</div>
+	</div>
+	<div id='container'>
     <div class="item inspire_world" id='file_field_button'>
       <a class="inspire_world" href=""> Inspire the world ...
       <br><br>
       <i class="icon-camera-retro icon-2x" ></i>
       </a>
     </div>
-    <% @photos.each do |photo| %>
-       <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
-    <% end %>
-  </div>
-  <script> function sendRequestViaMultiFriendSelector() {
-    FB.ui({method: 'apprequests',
-      message: 'My Great Request'
-    }, requestCallback);
-  } </script>
+	  <% @photos.each do |photo| %>
+	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
+	  <% end %>
+	</div>
+</div>
+
+<div class="share-holder" id="share-mobile">
+	<h3><span class="quote">Inspire friends</span></h3>
+	<%= render 'shared/facebook_desktop' %>
+	<%= render 'shared/twitter_share' %>
 </div>
 
 <% if current_user %>
-  <%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>  
-
-  <div class="footer-mobile">
-    <div class="menu-button">
-      <%=link_to image_tag('explore-button.png', :class=>'btn-img'), user_path(current_user)%>
-    </div>
-    <div class="menu-button">
-      <%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %> 
-    </div>
-    <div class="menu-button">
-      <%=link_to image_tag('user-button.png', :class=>'btn-img'), user_path(current_user)%>
-    </div>
-  </div>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>	
+	<div class="footer-mobile">
+		<div class="menu-button">
+			<%=link_to image_tag('explore-button.png', :class=>'btn-img'), inspirations_path%>
+		</div>
+		<div class="menu-button">
+			<%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %>	
+		</div>
+		<div class="menu-button" id="share-button">
+			<%=image_tag('share-button.png', :class=>'btn-img', :id => "share-button") %>
+		</div>
+	</div>
 <% else %>
   <div class="photo-form">
     <div id="choose">
