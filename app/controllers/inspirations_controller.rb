@@ -1,5 +1,4 @@
 class InspirationsController < ApplicationController
-before_filter :admin?, :only => [:index]
 
   def new
     @inspiration = Inspiration.new
@@ -32,6 +31,8 @@ before_filter :admin?, :only => [:index]
 
   def index
     @admin_inspirations = Inspiration.admin_inspirations
+    @today_inspiration = Inspiration.current_master_inspiration
+    @inspirations = Inspiration.all
     @inspiration = Inspiration.new
   end
 
