@@ -517,8 +517,155 @@ input[type="text"] {
   font-size: 14px;
 }
 
-.image {
-    
+#pacman {
+  height: 200px;
+  margin: auto 0;
+  padding: 80px;
+}
+////Styling for Image Show Page////
+
+
+.show-container{
+  width: 100%
 }
 
+.image-container {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.img-show { 
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+.inspiration-show {
+  margin-left: 50%;
+  padding-top: 60px;
+}
+
+.inspiration-date {
+  font-family: 'Dosis', sans-serif;
+  color: #009B77;
+}
+
+.vote-stats{
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;  
+  color: #009B77; 
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.8em;
+  margin-top: 50px;
+}
+
+#new_vote input[type="submit"] {
+  background: #009B77;
+  width: 50%;
+  float: left;
+  height: 40px;
+  font-size: 1.2em;
+  color: white;
+}
+
+.voted{
+  float: left;
+  margin-left: 5%;
+}
+
+.vote-count{
+  float: right; 
+}
+
+.user-info {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10px;
+}
+
+.photo-user{
+  float: left;
+}
+
+.fb_edge_widget_with_comment{
+ float: right;
+ margin-right: 0; 
+}
+
+/////////////  Responsive Design - ShowPage /////
+//////////// Laptop view //////////////////////
+@media screen and (max-width: 1200px) {
+  .image-container {
+  width: 50%;
+  margin-left: 25%;
+  margin-right:25%;
+  }
+  .user-info{
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  }
+  .vote-stats {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+
+//////////// Ipad view ////////////////////////
+@media screen and (max-width: 768px) {
+  .image-container {
+  width: 60%;
+  margin-left: 20%;
+  margin-right:20%;
+  }
+  .user-info {
+  width: 60%;
+  margin-left: 20%;
+  margin-right:20%;
+  }
+  .vote-stats {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .photo-user{
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .fb_edge_widget_with_comment{
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  #new_vote input[type="submit"] {
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+    background: #009B77;
+    height: 40px;
+    font-size: 1.2em;
+    color: white;
+  }
+  .voted{
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+  .vote-count{
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+}
+//////////////// end responsive design ////////
+
+#myModal {
+  height: 400px;
+  width: 400px;
+}
 
