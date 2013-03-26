@@ -36,9 +36,3 @@ Image.prototype.choose = function(selector) {
     $('#photo_upload_button').show(); 
  }); 
 };
-
-
-
-
-
-

@@ -1,19 +1,22 @@
-<h1>Welcome, <%= @user.username %>!</h1>
+<h1 class="profile-title"><%= @user.username %>,</h1>
 
-<h4>You've shared <%= pluralize(@user.photos.count, "photo") %></h4>
+<h3 class="profile-subtitle">You've shared in <%= pluralize(@user.photos.count, "inspiration") %></h3>
 
-
-
-<div class="row-fluid photos">
-  <div class="span12">
-    <% @user.photos.each_slice(3) do |photos| %>
-    <div class="row-fluid">
-      <% photos.each do |photo| %>
-        <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
-      <% end %>
+<% @user.photos.each do |photo| %>
+  <a href="/inspirations/<%=photo.inspiration.id%>">
+    <div class="row-fluid profile-bar"> 
+      <div class="span1 content-photo"> 
+         <%= render :partial => 'shared/thumb', :locals => {:photo => photo} %>
+      </div>
+      <div class="span9 content-name">
+         <%= photo.inspiration.content %>
+      </div>
+      <div class="span2 content-date">
+       <%= photo.created_at.strftime("%d %b. %Y") %>
+      </div>
     </div>
-  <% end %>
-  </div>
-</div>
+  </a>
+<% end %>
 
-<%= render 'photos/form' %>
+
+

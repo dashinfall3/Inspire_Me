@@ -171,3 +171,40 @@ div.caption {
   color: green;
   font-weight: bold;
 }
+
+/*STYLING FOR PROFILE PAGE*/
+.profile-bar {
+  border: solid #DDDDDD 1px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  width: 85%;
+  color: black;
+}
+
+.profile-bar:hover {
+  background: #F2F2F2;
+}
+
+.content-name {
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.content-date {
+  padding-top: 12px;
+}
+
+.content-photo {
+  padding-top: 5px;
+}
+
+.profile-title {
+  padding: 25px 40px 0 40px;
+}
+
+.profile-subtitle {
+  padding: 0 40px; 
+}
+/*END - STYLING FOR PROFILE PAGE*/
