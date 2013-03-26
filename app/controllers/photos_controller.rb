@@ -18,6 +18,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = current_user.photos.build(params[:photo])
+
     respond_to do |format|
       if @photo.save
         current_user.add_as_participant(@photo)

@@ -5,5 +5,4 @@ class StaticPagesController < ApplicationController
     @photo = Photo.new
     @vote = Vote.new
   end
-
 end

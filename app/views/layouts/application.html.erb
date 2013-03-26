@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href='http://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker|Playfair+Display|Gloria+Hallelujah|Esteban|Handlee|Strait|Original+Surfer|Alike' rel='stylesheet' type='text/css'><!-- text in the photos -->
   <link href='http://fonts.googleapis.com/css?family=Petit+Formal+Script|Allura|Arizonia|' rel='stylesheet' type='text/css'><!-- logo -->
+  <link href='http://fonts.googleapis.com/css?family=Dosis|Cagliostro|Roboto+Condensed|Titillium+Web' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -24,7 +24,7 @@
     <ul class="mobile-nav">
       <% if current_user %>
         <li><%= link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
-        <li><%= link_to "Add inspire", new_inspiration_path %></li>
+        <li class='add-photo'><%= link_to "+ inspiration", new_inspiration_path%></li>
         <li><%= link_to "Profile", current_user %></li>
       <% else %>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
@@ -32,12 +32,6 @@
       <% end %>
     </ul><!-- end of links --> 
   </header> <!-- end of header -->
-  <div class="messages">
-    <p class="notice" ><%= notice %></p>
-      <% if alert %>
-        <p class="alert"><%= alert %></p>
-      <% end %>
-  </div> <!-- end alert -->
 
   <%= yield %>
 </body>
