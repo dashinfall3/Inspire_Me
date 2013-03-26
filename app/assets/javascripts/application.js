@@ -14,6 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.masonry.min
-//= require bootstrap
+//= require twitter/bootstrap
 
 //new change

@@ -55,6 +55,3 @@ Image.prototype.chooseMobile = function(selector) {
     $(this).closest('.menu-button').css({'background-color': '#009B77'});
   }); 
 };
-
-
-
