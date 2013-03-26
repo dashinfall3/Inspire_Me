@@ -1,12 +1,15 @@
 <div id="page-container">
-
-	<h1><%=@inspiration.content%></h1>
-	<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@inspiration.id%>" data-send="true" data-width="450" data-show-faces="true"></div>
+	<%= render 'shared/messages' %>
+	<%= render 'shared/facebook_desktop' %>
+	<div class='inspiration'>
+		<h1><i class='brand'>Inspiration: </i><span class='quote'><%=@inspiration.content%></span></h1>
+	</div>
 	<div id='container'>
 	  <% @photos.each do |photo| %>
 	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
 	  <% end %>
 	</div>
+	<div>
 	<script> function sendRequestViaMultiFriendSelector() {
 	  FB.ui({method: 'apprequests',
 	    message: 'My Great Request'
@@ -15,7 +18,19 @@
 </div>
 
 <% if current_user %>
-	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>	
+
+	<div class="footer-mobile">
+		<div class="menu-button">
+			<a href="">Explore</a>
+		</div>
+		<div class="menu-button">
+			<a href="" id="file_field_button">Add photo</a>
+		</div>
+		<div class="menu-button">
+			<%=link_to "Profile", user_path(current_user)%>
+		</div>
+	</div>
 <% else %>
 	<div class="photo-form">
 		<div id="choose">
@@ -23,5 +38,6 @@
 		</div>
 	</div>
 <% end %>
+
 
 
