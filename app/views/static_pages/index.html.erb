@@ -1,18 +1,29 @@
-<div id='container'>
-  <% @photos.each do |photo| %>
-    <div class='item'>
-      <%= image_tag photo.image_url.to_s  %>
-      <div class="row-fluid caption">
-        <div class="span11 caption-text">
-          <%= photo.caption %>
-        </div>
-        <div class="span1 caption-delete">
-          <%= link_to 'x', photo, method: :delete %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<div id="page-container">
+
+	<h1><%=@inspiration.content%></h1>
+	<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@inspiration.id%>" data-send="true" data-width="450" data-show-faces="true"></div>
+	<div id='container'>
+	  <% @photos.each do |photo| %>
+	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
+	  <% end %>
+	</div>
+	<script> function sendRequestViaMultiFriendSelector() {
+	  FB.ui({method: 'apprequests',
+	    message: 'My Great Request'
+	  }, requestCallback);
+	} </script>
 </div>
 
-<%= render 'photos/form' %>
+
+
+<% if current_user %>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>
+<% else %>
+	<div class="photo-form">
+		<div id="choose">
+			<%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
+		</div>
+	</div>
+<% end %>
+
 

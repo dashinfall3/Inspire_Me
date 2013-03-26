@@ -34,5 +34,6 @@ Image.prototype.choose = function(selector) {
     $("#file_field_button").hide();
     $('#caption').show();
     $('#photo_upload_button').show(); 
- }); 
+  }); 
 };
+

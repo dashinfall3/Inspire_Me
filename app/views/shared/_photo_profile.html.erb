@@ -1,0 +1,15 @@
+<div class="span4">
+  <div class="photo">
+    <%= image_tag photo.image_url.to_s %>
+    <div class="row-fluid caption">
+      <div class="span11 caption-text">
+        <%= photo.inspiration.content %>
+      </div>
+      <div class="span1">
+        <% if photo.user == current_user %>
+          <%= link_to 'x', photo, method: :delete %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

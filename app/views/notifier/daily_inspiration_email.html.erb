@@ -4,9 +4,12 @@
 		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 	</head>
 	<body>
-		<h1>Inspire Me's Daily Inspiration</h1>
-		<%= DateTime.now.strftime("%B %d, %Y")%>: <h3><%= @inspiration.id %></h3>
+		<h1>Daily Inspiration</h1>
+		<%= DateTime.now.strftime("%B %d, %Y")%>: 
+		<h2><%= @inspiration.content %></h2>
+		<h4>Take a photo of what this represents to you. Be clever, funny, or inspirational. 
+			Let's create something beautiful today.</h4>
 
-		<%= link_to 'Check out Inspiration!', 'frozen-cove-1468.herokuapp.com' %>
+		<%= link_to 'Add a photo', 'http://frozen-cove-1468.herokuapp.com' %>
 	</body>
 </html>

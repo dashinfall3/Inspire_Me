@@ -1,4 +1,4 @@
-class Inspiration < ActiveRecord::Base
+class Inspiration < ActiveRecord::Base 
   PENDING = 0 
   LIVE = 1
   COMPLETE = 2
@@ -18,6 +18,15 @@ class Inspiration < ActiveRecord::Base
   scope :live, where(:status => LIVE)
   scope :complete, where(:status => COMPLETE)
 
+  #implemented method missing for practice
+
+  # def self.method_missing(name, *args, &block)
+  #   if name == (:pending || :live || :complete)
+  #     Inspiration.where(:status => STATUS[name])
+  #   else
+  #     super
+  #   end
+  # end
   
   def self.daily_inspiration
   	inspiration = Inspiration.current_master_inspiration

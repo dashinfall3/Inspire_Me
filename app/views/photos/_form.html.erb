@@ -12,14 +12,11 @@
       </div>
     <% end %>
     <div>
-      <div>
-        <div class="wrapper">
-          <%= f.file_field :image, :id => 'file_field' %>
-        </div>
-      </div>
+
       <div id ='caption'>
         <%= f.text_field :caption,  :placeholder => "caption" %>
       </div>
+      <%= f.hidden_field :inspiration_id, :value => inspiration.id %>
       <div id ='photo-button',>
         <%= f.submit :class => 'btn',  :value => 'Upload'%>
       </div>  

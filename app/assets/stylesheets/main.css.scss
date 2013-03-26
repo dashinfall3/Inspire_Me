@@ -1,23 +1,162 @@
 @import "bootstrap";
 
-#logo {
-  font-size: 36px;
-  color: white;
-  opacity: 1;
+///////////  header - start ///////////////////
+.omar-header {
+  position: fixed;
+  height: 46px;
+  width: 100%;
+  background-color: rgba(248, 254, 255, 0.9);
   z-index: 1;
+  border-bottom: 1px solid #ddd;
 }
 
-.pull-right li a{
-  color: white;
+.omar-header a {
+   color: #009B77; 
+   text-decoration: none; 
 }
 
-.main-container {
-  padding-top: 0px;
-  padding-bottom: 175px;
+.omar-header #logo:hover {
+   color: #000;  
 }
 
+#logo { 
+  padding: 13px 0 0 40%; 
+  font-family: 'Petit Formal Script', cursive; 
+  font-size: 2.2em;
+  display: inline-block;
+}
+
+
+////////////  header right nav ////////////////
+
+.mobile-nav {
+  float: right;
+  position:relative;
+  right: 0%;
+  border-right: solid 0px;
+}
+
+.mobile-nav li {
+  float: right;
+  margin-right: 4px;
+}
+
+.mobile-nav a {
+  text-align: center;
+  width: 100px;
+  display: block;
+  padding: 13px;
+  font-size: 1.5em;
+} 
+
+.mobile-nav a:hover{
+  background-color: #E8F7FA;
+}
+
+//////////// end header right nav /////////////
+//////////// end header for desktops ////////// 
+
+/////////////  Responsive Design - header /////
+//////////// Laptop view //////////////////////
+@media screen and (max-width: 1200px) {
+ #logo {
+  padding-left: 30%; 
+ }
+ .mobile-nav a {
+  font-size: 1.2em;
+ }
+}
+
+//////////// Ipad view ////////////////////////
+@media screen and (max-width: 768px) {
+  #logo {
+    font-size: 2em;
+    padding-left: 14%; 
+  }
+  .mobile-nav a {
+   font-size: 1.2em;
+   width: 80px;
+ }
+}
+
+///////////////// Mobile view //////////////////
+
+@media screen and (max-width: 480px) {
+  #logo {
+    padding-left: 7%; 
+    font-size: 1.6em;
+   }
+  .mobile-nav a {
+    font-size: 1.2em;
+    white-space:nowrap;
+    width: 70px;
+ }
+}
+
+///////////////// Mobile view //////////////////
+
+@media screen and (max-width: 340px) {
+  #logo {
+    padding-left: 3%; 
+    font-size: 1.4em;
+   }
+  .mobile-nav a {
+    padding: 13px 10px 0px 0px;
+    font-size: 1em;
+    white-space:nowrap;
+    width: 60px;
+ }
+}
+
+//////////////// end responsive design ////////
+//////////////// end header ///////////////////
+
+
+
+//////////////// start body ///////////////////
+
+.text{
+  height: 50px;
+  background-color: red;
+  width: 300
+
+}
+.messages .notice{
+  margin: 0px;
+}
+
+#page-container {
+  padding-top: 60px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: inline;
+}
+
+input {
+  border-radius: 3px;
+
+}
+
+#form-container {
+  padding-top :60px;
+  margin-left: 35%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.photos {
+  padding-top: 500px;
+}
+
+p {
+  bottom-margin: -10px;
+}
+  
 .photo {
-  margin: 20px 0 0 0;
 }
 
 .photo-form {
@@ -38,12 +177,11 @@
 }
 
 body {
-  background-image: url("debut_light.png") 
+  font-family: 'Esteban', serif;
+  background-color: #f1f1f1;
 }
 
 img {
-  border-bottom: solid white 1px;
-  padding-bottom: 2px;
   margin: 0;
 }
 
@@ -61,43 +199,31 @@ div.caption {
   padding-bottom: 120px;
 }
 
-.container-fluid{
-  padding: 0;
-
-}
 
 #container .item {
-  padding: 10px;
   border: solid #DDDDDD 1px;
   background: white;
-  
+  padding: 0;
 }
-
-.navbar {
-  opacity: 0.85;
-  background: #000;
-  height: 60px;
-  padding-top: 20px;
-}
-
-#header-backdrop {
-  width: 100%;
-  height: 80px;
-  background: #000;
-}
-
-.navbar-inner{
-  width: 80%;
-  margin: 0px auto;
-}
-
-.footer {
-  background: black;
-}
-
 
 #file_field_button {
   background-color: #009B77;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  width: 85%;
+  font-size: 24px;
+  height: 55px;
+}
+
+.item {
+  margin: 0;
+}
+
+#file_field_button_reg {
+  background-color: #ddd;
   border: none;
   color: #fff;
   border-radius: 5px;
@@ -113,8 +239,12 @@ div.caption {
   padding-bottom: 25px
 }
 
+.signin-form {
+  margin: 10px 0 0 0;
+}
+
 #file_field {
-  display: none;
+  display:none;
 }
 
 #photo-button {
@@ -172,7 +302,8 @@ div.caption {
   font-weight: bold;
 }
 
-/*STYLING FOR PROFILE PAGE*/
+//////////STYLING FOR PROFILE PAGE/////////
+
 .profile-bar {
   border: solid #DDDDDD 1px;
   margin: 20px auto;
@@ -207,4 +338,46 @@ div.caption {
 .profile-subtitle {
   padding: 0 40px; 
 }
-/*END - STYLING FOR PROFILE PAGE*/
+
+/////////end STYLING FOR PROFILE PAGE///////////
+
+.facebook-login {
+  margin: 0 0 0 -15px;
+  height: 70px;
+  width: 330px;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  background: #ddd;
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  width: 310px;
+  height: 40px;
+  font-size: 20px;
+}
+
+input[type="email"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="password"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
