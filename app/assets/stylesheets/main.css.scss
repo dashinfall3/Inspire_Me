@@ -97,6 +97,25 @@
   padding-top: 50px;
 }
 
+label {
+  margin-bottom: 5px;
+  display: inline;
+}
+
+input {
+  border-radius: 3px;
+
+}
+
+#form-container {
+  padding-top :60px;
+  margin-left: 35%;
+}
+
+.center {
+  margin: 0 auto;
+}
+
 .photos {
   padding-top: 500px;
 }
@@ -160,6 +179,10 @@ img {
   padding-bottom: 25px
 }
 
+.signin-form {
+  margin: 10px 0 0 0;
+}
+
 #file_field {
   display:none;
 }
@@ -218,7 +241,6 @@ img {
   color: green;
   font-weight: bold;
 }
-
 
 //////////////// footer ////////////////////
 
@@ -327,5 +349,114 @@ img {
 
 
 
+//////////STYLING FOR PROFILE PAGE/////////
 
+.profile-bar {
+  border: solid #DDDDDD 1px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  width: 85%;
+  color: black;
+}
 
+.profile-bar:hover {
+  background: #F2F2F2;
+}
+
+.content-name {
+  font-size: 20px;
+  padding-top: 15px;
+  font-family: 'Petit Formal Script', cursive;
+  color: #009B77; 
+}
+
+.content-date {
+  padding-top: 15px;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+.content-photo {
+  padding-top: 5px;
+}
+
+.profile-title {
+  padding: 25px 40px 0 40px;
+}
+
+.profile-subtitle {
+  padding: 0 40px; 
+}
+
+/////////end STYLING FOR PROFILE PAGE///////////
+
+.facebook-login {
+  margin: 0 0 0 -15px;
+  height: 70px;
+  width: 330px;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  background: #ddd;
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  width: 310px;
+  height: 40px;
+  font-size: 20px;
+}
+
+input[type="email"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="password"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+.vote-form {
+  margin: -25px 0 0 0;
+}
+
+.star {
+  border: solid yellow 2px;
+  size: 24px;
+}
+
+.vote-button{
+  background: none;
+  display: none;
+}
+
+#new_vote {
+  margin: 0;
+}
+
+#new_vote input[type="submit"] {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 25px;
+  font-size: 14px;
+}
+
+.image {
+    
+}

@@ -1,19 +1,21 @@
-<div id="page-container">
+<div id="form-container">
   <h2>Sign up</h2>
+  <div class='facebook-login'><%=link_to image_tag('login_facebook.png'), user_omniauth_authorize_path(:facebook) %></div>
+  <div class='signin-form'>
+    <h2>Use email instead</h2>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+      <div><%= f.text_field :username, :placeholder => "username", :autofocus => true %></div>
 
-    <div><%= f.text_field :username, :placeholder => "username", :autofocus => true %></div>
+      <div><%= f.email_field :email, :placeholder=> 'email', :autofocus => true %></div>
 
-    <div><%= f.email_field :email, :placeholder=> 'email', :autofocus => true %></div>
+      <div><%= f.password_field :password, :placeholder=> 'password' %></div>
 
-    <div><%= f.password_field :password, :placeholder=> 'password' %></div>
+      <div><%= f.password_field :password_confirmation, :placeholder=> 'password confirm' %></div>
 
-    <div><%= f.password_field :password_confirmation, :placeholder=> 'password confirm' %></div>
+      <div><%= f.submit "Sign up" %></div>
+    <% end %>
+  </div>
 
-    <div><%= f.submit "Sign up" %></div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
 </div>
