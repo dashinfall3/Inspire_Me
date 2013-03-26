@@ -1,0 +1,15 @@
+<div>
+  <%= form_for @photo do |f| %>
+      <div>
+        <%= f.file_field  :image, :id => 'file_field_mobile'%>
+      </div>
+      <%= f.hidden_field :inspiration_id, :value => inspiration.id %>
+      <div id ='photo-button'>
+        <%= f.submit :class => 'btn_mobile',  :value => 'Upload'%>
+      </div>  
+  <% end %>
+
+  <button id="file_field_button_mobile"><%=image_tag 'camera-button.png', :class=> 'btn-img'%></button>
+
+  <button id="photo_upload_button_mobile"><%=image_tag 'upload-button.png', :class=> 'btn-img'%></button>
+</div>

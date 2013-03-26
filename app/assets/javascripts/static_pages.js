@@ -7,7 +7,6 @@ var Photo = {
   },
 
   appendPhoto: function(event, data){
-    debugger
     $('.photos').append(data);
   }
 
