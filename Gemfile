@@ -26,7 +26,7 @@ end
 group :assets do
   gem 'sass-rails'
   gem 'bootstrap-sass'
-  gem 'twitter-bootstrap-rails'
+  gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
 end
 
