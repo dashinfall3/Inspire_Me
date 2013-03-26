@@ -1,20 +1,26 @@
 <div class="item">
- 
-    <%= image_tag photo.image_url.to_s %>
+    <%= image_tag photo.image_url.to_s, :class => 'image' %>
     <div>
       <% if current_user %>
         <div>
           <% if current_user.voted_on? photo %>
             Voted
           <% else %>
-            <%= form_for photo.votes.build do |f| %>
-              <%= f.hidden_field :photo_id %>
-              <%=f.submit "#vote" %>
-            <% end %>
+            <div class="vote-form">
+              <%= form_for photo.votes.build do |f| %>
+                <%= f.hidden_field :photo_id %>
+                <div class="star">
+                  <i class="icon-star-empty"></i>
+                </div>
+                <%=f.submit "star", :class=> 'vote-button' %>
+              <% end %>
+            </div>
+
+
           <% end %>
         </div>
       <% end %>
-    
+
   </div>
 </div>
 

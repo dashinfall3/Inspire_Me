@@ -14,9 +14,21 @@ $(document).ready(function(){
     var upload = new Button;
     upload.connect("#photo_upload_button", ".btn");
 
+    var vote = new Button;
+    vote.connect('.star', '.vote-button');
+
     var photo = new Image;
     photo.choose("#file_field");
 
+    $('.image').hover(
+      function(){
+        $('.star').show();
+      },
+      function(){
+        $('.star').hide();
+      }
+
+    );
 
 });
 
