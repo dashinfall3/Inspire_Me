@@ -497,8 +497,10 @@ input[type="text"] {
   font-size: 14px;
 }
 
-.image {
-    
+#pacman {
+  height: 200px;
+  margin: auto 0;
+  padding: 80px;
 }
 ////Styling for Image Show Page////
 
@@ -642,4 +644,8 @@ input[type="text"] {
 }
 //////////////// end responsive design ////////
 
+#myModal {
+  height: 400px;
+  width: 400px;
+}
 
