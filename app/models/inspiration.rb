@@ -75,6 +75,9 @@ class Inspiration < ActiveRecord::Base
     Inspiration.admin_inspirations.pending.first
   end
 
+  def photo_count 
+    self.photos.count
+  end
 
 
 

@@ -1,19 +1,21 @@
 <div id="page-container">
-  <%= render 'shared/facebook_desktop' %>
+  <div class='inspiration row-fluid'>
+    <div class="inspiration-holder">
+      
+      <h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
+      <div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
+    </div>
+    <div class="share-holder" id="share-desktop">
+      <h3><span class="quote">Inspire friends</span></h3>
+      <%= render 'shared/facebook_desktop' %>
+      <%= render 'shared/twitter_share' %>
+    </div>
+  </div>
   <div class="row-fluid">
-  <h1><%=@inspiration.content%></h1>
-    <div class="span12">
-      <% if @inspiration.photos.any? %>
-          <% @inspiration.photos.each_slice(3) do |photos| %>
-          <div class="row-fluid">
-            <% photos.each do |photo| %>
-              <%= render :partial => 'shared/photo', :locals => {:photo => photo} %>
-            <% end %>
-          </div>
-          <% end %>
-        <% else %>
-          Need to add some photos
-        <% end %>
+    <div id='container'>
+      <% @inspiration.photos.each do |photo| %>
+         <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
+      <% end %>
     </div>
   </div>
 
@@ -27,3 +29,30 @@
       </div>
   <% end %>
 </div>
+
+<div class="share-holder" id="share-mobile">
+  <h3><span class="quote">Inspire friends</span></h3>
+  <%= render 'shared/facebook_desktop' %>
+  <%= render 'shared/twitter_share' %>
+</div>
+
+<% if current_user %>
+  <%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>  
+  <div class="footer-mobile">
+    <div class="menu-button">
+      <%=link_to image_tag('explore-button.png', :class=>'btn-img'), inspirations_path%>
+    </div>
+    <div class="menu-button">
+      <%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %> 
+    </div>
+    <div class="menu-button" id="share-button">
+      <%=image_tag('share-button.png', :class=>'btn-img', :id => "share-button") %>
+    </div>
+  </div>
+<% else %>
+  <div class="photo-form">
+    <div id="choose">
+      <%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
+    </div>
+  </div>
+<% end %>
