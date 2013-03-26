@@ -30,12 +30,12 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
