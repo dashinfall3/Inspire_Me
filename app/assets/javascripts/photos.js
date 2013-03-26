@@ -20,6 +20,16 @@ $(document).ready(function(){
     var photo = new Image;
     photo.choose("#file_field");
 
+    var chooseButtonMobile = new Button;
+    vote.connect('#file_field_button_mobile', '#file_field_mobile');
+
+    var uploadMobile = new Button;
+    upload.connect("#photo_upload_button_mobile", ".btn_mobile");
+
+    var photoMobile = new Image;
+    photo.chooseMobile("#file_field_mobile");
+    
+
     $('.image').hover(
       function(){
         $('.star').show();
@@ -48,6 +58,14 @@ Image.prototype.choose = function(selector) {
     $('#caption').show();
     $('#photo_upload_button').show(); 
 
+  });   
+};
+
+Image.prototype.chooseMobile = function(selector) {
+  $(selector).val('').change(function(){
+    $("#file_field_button_mobile").hide();
+    $('#photo_upload_button_mobile').show(); 
+    $(this).closest('.menu-button').css({'background-color': '#009B77'});
   }); 
 };
 

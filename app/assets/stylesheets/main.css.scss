@@ -145,7 +145,7 @@ img {
   padding: 0;
 }
 
-#file_field_button_style {
+.file_field_button_style {
   background-color: #009B77;
   border: none;
   color: #fff;
@@ -155,6 +155,16 @@ img {
   width: 85%;
   font-size: 24px;
   height: 55px;
+}
+
+#file_field_button_mobile {
+  background-color: white;
+  border: none;
+}
+
+#photo_upload_button_mobile {
+  background-color: white;
+  border: none;
 }
 
 .item {
@@ -176,7 +186,6 @@ img {
 #choose {
   height: 12.5%;
   text-align: center;
-  padding-bottom: 25px
 }
 
 .signin-form {
@@ -184,6 +193,10 @@ img {
 }
 
 #file_field {
+  display:none;
+}
+
+#file_field_mobile {
   display:none;
 }
 
@@ -222,6 +235,10 @@ img {
   display:none;
 }
 
+#photo_upload_button_mobile {
+  display:none;
+}
+
 #uploader {
   text-align: center;
   padding-bottom: 25px
@@ -255,23 +272,35 @@ img {
 } 
 
 .footer-mobile a {
-  display: inline-block;
-  float: left;
-  width: 33%;
-  border-left: solid 1px #ccc;
   height: 100px;
   text-align: center;
   padding-top: 20px;
 }
 
+.menu-button {
+  float:left;
+  width: 33%;
+  text-align: center;
+  padding-top: 10px;
+  border-left: 1px solid #ccc;
+  height: 100%;
+}
+
+.menu-button form {
+  margin: 0 0 0 0;
+}
+
 .photo-form {
-  padding: 10px 0 0 0;
   position: fixed;
   bottom: 0;
   border-top: #ccc 3px solid;
-  width: 40%;
-  background: #838383;
-  left: 30%;
+  width: 30%;
+  background: #535353;
+  left: 35%;
+}
+
+.btn-img {
+  height:30px;
 }
 
 /////////////  Responsive Design - header /////
@@ -458,11 +487,8 @@ input[type="text"] {
   font-size: 14px;
 }
 
-#camera_button {
-  
-}
-
 .image {
     
 }
+
 
