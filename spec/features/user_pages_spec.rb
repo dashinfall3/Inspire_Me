@@ -10,6 +10,9 @@ describe 'User pages' do
     context "when given valid information" do
 
       before do
+            Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
+
+        CarrierWave::Mount::Mounter.any_instance.stub(:store!)
         user = attributes_for(:user)
         @email = user[:email]
 
@@ -112,13 +115,43 @@ describe 'User pages' do
   end
 
   describe 'Show page' do
-    let(:user) { create :user }
     before do
-      login_as(user)
-      visit user_path(user)
+      Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
+      @photo = create :photo 
+      @inspiration =  @photo.inspiration 
+      @user = @photo.user 
+      @user2 = create :user 
+      login_as(@user)
     end
 
-   
+    context 'when visiting my show page' do
+      before { visit user_path(@user) }
+      
+      it "displays the title 'My Inspirely Profile'" do
+        page.should have_content("My Inspirely Profile")
+      end
 
+    end
+
+    context "when visiting other user's show page" do
+      before { visit user_path(@user2) }
+
+      it "displays the name of the user" do
+        page.should have_content(@user2.username)
+      end
+
+    end
+
+    context 'independent of profile' do
+      before { visit user_path(@user) }
+
+      it "displays the correct number of inspiration replies" do
+        count = page.find("span[id='count']")
+        count.text.to_i.should eq(@user.photos.count)
+      end
+
+    end
+
+  end
 
 end
