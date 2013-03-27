@@ -381,9 +381,9 @@ img {
     font-size: 1.8em;
   }
   .mobile-nav a {
-   padding: 13px 10px 0px 0px;
-   font-size: 1.1em;
-   width: 70px;
+   padding: 13px 5px 0px 0px;
+   font-size: 1em;
+   width: 65px;
  }
   .brand, .quote {
   font-size: 0.7em;
@@ -398,7 +398,7 @@ img {
     font-size: 1.6em;
    }
   .mobile-nav a {
-    font-size: 1.1em;
+    font-size: 1em;
     width: 60px;
  }
   .photo-form{
@@ -433,6 +433,9 @@ img {
   }
   .inspire_world{
     display: none;
+  }
+  .explore {
+  display:none;
   }
 }
 
@@ -479,6 +482,9 @@ img {
   }
   .inspire_world{
     display: none;
+  }
+  .explore {
+  display:none;
   }
 }
 
