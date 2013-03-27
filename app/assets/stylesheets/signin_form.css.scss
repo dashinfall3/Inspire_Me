@@ -1,0 +1,49 @@
+
+#form-container {
+  padding-top :60px;
+  margin-left: 35%;
+}
+
+.signin-form {
+  margin: 10px 0 0 0;
+}
+
+.facebook-login {
+  margin: 0 0 0 -15px;
+  height: 70px;
+  width: 330px;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  background: #ddd;
+  border-radius: 3px;
+  border: 1px #ccc solid;
+  width: 310px;
+  height: 40px;
+  font-size: 20px;
+}
+
+input[type="email"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="password"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 300px;
+}

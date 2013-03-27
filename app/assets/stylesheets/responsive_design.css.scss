@@ -1,5 +1,5 @@
-//////////// Laptop view //////////////////////
-// header //
+/*//////////// Laptop view //////////////////////
+// header //*/
 @media screen and (max-width: 1200px) {
   .right-nav a {
   font-size: 1.2em;
@@ -10,9 +10,9 @@
   font-size: 0.9em;
  }
 }
-
+/*
 //////////// Ipad view ////////////////////////
-// header //
+// header //*/
 @media screen and (max-width: 768px) {
   #logo {
     font-size: 1.8em;
@@ -29,9 +29,9 @@
  }
 
 }
-
+/*
 //////// Mobile view portrait mode/////////////
-//header //
+//header //*/
 @media screen and (max-width: 480px) {
   #logo {
     font-size: 1.6em;
@@ -51,10 +51,43 @@
     border: 0px;
     display: none;
   }
-}
 
+  .inspirely{
+    display: none;
+  }
+
+// sign in form //
+  #form-container {
+    padding-top :60px;
+    margin-left: 5%;
+  }
+
+// footer //
+  .footer-mobile {
+    display: block;
+  }
+
+  #share-mobile {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+  }
+
+  .add-photo{
+    display: none;
+  }
+
+/*// admin //*/
+  #quote-inspire {
+    font-size: 24px;
+    width: 95%;
+  }
+
+}
+/*
 ////////// Mobile view landscape mode /////////
-//header //
+//header //*/
 @media screen and (max-width: 320px) {
   #logo {
     font-size: 1.4em;

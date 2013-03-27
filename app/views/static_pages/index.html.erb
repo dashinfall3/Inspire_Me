@@ -5,54 +5,18 @@
     <%= render 'body_header_right' %>
   </div> <!-- end body_header  -->
   
-  
-  <div id='container'><!-- body_photos -->
-    <div class="item inspire_world">
-      <i class="inspirely"> Inspire the world ...
-      <br><br>
-      <i class="icon-camera-retro icon-2x" ></i>
-      </i>
-    </div>
-    <% @photos.each do |photo| %>
-       <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
-    <% end %>
-  </div> <!-- end body_photos -->
+  <%= render 'body_photos' %>
 
-</div><!-- end body -->
-
-<div class="share-holder" id="share-mobile">
+<div class="share-holder" id="share-mobile"><!-- footer and uploader form -->
   <h3><span class="quote">Inspire friends</span></h3>
   <%= render 'shared/facebook_desktop' %>
   <%= render 'shared/twitter_share' %>
 </div>
 
 <% if current_user %>
-  <%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>  
-  <div class="footer-mobile">
-    <div class="menu-button">
-      <%=link_to image_tag('explore-button.png', :class=>'btn-img'), inspirations_path%>
-    </div>
-    <div class="menu-button">
-      <%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %> 
-    </div>
-    <div class="menu-button" id="share-button">
-      <%=image_tag('share-button.png', :class=>'btn-img', :id => "share-button") %>
-    </div>
-  </div>
-<% else %>
-  <div class="photo-form">
-    <div id="choose">
-      <%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
-    </div>
-  </div>
-<% end %>
+	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>	
+	<%= render :partial => 'shared/footer_mobile', :locals => {:inspiration => @inspiration} %>
+  <% else %>
+    <%= render :partial => 'shared/footer_mobile_logged_out', :locals => {:inspiration => @inspiration} %>
+<% end %><!-- end footer and uploader form -->
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Consuming Inspiration...</h3>
-  </div>
-  <div class="modal-body">
-    <img id='pacman' src="assets/ajax-loader.gif">
-  </div>
-</div>

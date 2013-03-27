@@ -1,0 +1,46 @@
+.profile-bar {
+  border: solid #DDDDDD 1px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  background: white;
+  width: 90%;
+  color: black;
+  position: relative;
+}
+
+.profile-bar a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.profile-bar:hover {
+  background: #F2F2F2;
+}
+
+.content-name {
+  font-size: 12px;
+  padding-top: 10px;
+  font-family: 'Petit Formal Script', cursive;
+  color: #009B77; 
+}
+
+.content-date {
+  padding-top: 15px;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+.content-photo {
+  padding-top: 5px;
+}
+
+.profile-title {
+  padding: 10px 0 0 20px;
+}
+
+.profile-subtitle {
+  padding: 0 20px; 
+}

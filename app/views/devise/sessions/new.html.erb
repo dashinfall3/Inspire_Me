@@ -3,6 +3,9 @@
 	<div class='facebook-login'><%=link_to image_tag('login_facebook.png'), user_omniauth_authorize_path(:facebook) %></div>
 	<div class='signin-form'>
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		  <% flash.each do |name, msg| %>
+		      <%= content_tag :section, msg, :id => "flash_#{name}", :class => "flash" %>
+		  <% end %>
 		  <div><%= f.email_field :email, :placeholder=> 'email', :autofocus => true %></div>
 
 		  <div><%= f.password_field :password, :placeholder => 'password' %></div>

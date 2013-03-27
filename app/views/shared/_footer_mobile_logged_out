@@ -1,0 +1,11 @@
+<div class="footer-mobile">
+	<div class="menu-button">
+		<%=link_to image_tag('explore-button.png', :class=>'btn-img'), new_user_registration_path %>
+	</div>
+	<div class="menu-button">
+		<%=link_to image_tag('camera-button.png', :class=>'btn-img'), new_user_registration_path %>
+	</div>
+	<div class="menu-button" id="share-button">
+		<%=link_to image_tag('share-button.png', :class=>'btn-img'), new_user_registration_path %>
+	</div>
+</div>
