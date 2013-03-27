@@ -1,7 +1,11 @@
 <div id="page-container">
-  <h1 class="profile-title"><%= @user.username %>,</h1>
+  <% if @user == current_user %>
+    <h1 class="profile-title">My Inspirely Profile</h1>
+  <% else %>  
+    <h1 class="profile-title"><%= @user.username %>'s Inspirely Profile</h1>
+  <% end %>
 
-  <h3 class="profile-subtitle">You've shared in <%= pluralize(@user.photos.count, "inspiration") %></h3>
+  <h3 class="profile-subtitle">Inspiration replies: <span id='count'><%= @user.photos.count %></span></h3>
 
   <% @inspirations.each do |inspiration| %>
     <a href="/inspirations/<%=inspiration.id%>">

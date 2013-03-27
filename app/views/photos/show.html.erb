@@ -15,12 +15,11 @@
 			<div class="fb-like" data-href="http://inspirely.co/photos/<%=@photo.id%>" data-send="true" data-width="450" data-layout="button_count"></div>
 		</div>
 		<div class='vote-stats'>
+			<span class='vote-count'>Vote Count: <%= @photo.votes.count %></span>
 	    <% if current_user %>
 	        <% if current_user.voted_on? @photo %>
-	        <span class='vote-count'>Vote Count: <%= @photo.votes.count %></span>
 	         <span class='voted'>Voted!</span>
 	        <% else %>
-	        <span class='vote-count'>Vote Count: <%= @photo.votes.count %></span>
             <%= form_for @photo.votes.build do |f| %>
               <%= f.hidden_field :photo_id %>
               <%= f.submit 'Vote', :class=> 'submit-button' %>
