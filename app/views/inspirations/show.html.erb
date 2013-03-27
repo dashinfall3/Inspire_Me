@@ -11,8 +11,29 @@
       <%= render 'shared/twitter_share' %>
     </div>
   </div>
+  <div id="loading">
+    <i>Photo Uploading...</i>
+    <i class="icon-spinner icon-spin icon-4x"></i>
+  </div>
   <div class="row-fluid">
     <div id='container'>
+      <%if current_user%>
+        <div class="item inspire_world" id="cam_upload">
+          <i class="inspirely"> Inspire the world ...
+          <br><br>
+          <i class="icon-camera-retro icon-2x" ></i>
+          </i>
+        </div>
+      <%else%>
+        <a href="/users/sign_in">
+          <div class="item inspire_world">
+            <i class="inspirely"> Sign in to Inspirely
+            <br><br>
+            <i class="icon-camera-retro icon-2x" ></i>
+            </i>
+          </div>
+        </a>
+      <%end%>
       <% @inspiration.photos.each do |photo| %>
          <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
       <% end %>
