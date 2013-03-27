@@ -18,11 +18,11 @@ describe 'Static pages' do
       end
 
       it "contains a sign up link" do
-        navigation.should have_selector("a[href='#{new_user_session_path}']")
+        navigation.should have_link_to(new_user_session_path)
       end
 
       it "contains a sign in link" do
-        navigation.should have_selector("a[href='#{new_user_registration_path}']")
+        navigation.should have_link_to(new_user_registration_path)
       end
     end
 
