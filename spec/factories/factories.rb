@@ -1,6 +1,6 @@
 FactoryGirl.define do 
 
-  factory :user, :aliases => [:creator] do
+  factory :user, :aliases => [:creator, :voter] do
     sequence(:username) { |n| "Username#{n}" }
     sequence(:email) { |n| "e#{rand(100)}mail#{n}@ema#{rand(100)}il.com" }
     password 'password'
@@ -18,5 +18,12 @@ FactoryGirl.define do
     inspiration
     user
   end
+
+  factory :vote do
+    voter
+    photo
+  end
+
+
 
 end
