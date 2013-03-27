@@ -1,14 +1,13 @@
 <div id="page-container">
 	<p id="notice"><%= notice %></p>
-	<div class='inspiration row-fluid'>
-		<div class="inspiration-holder">
-			<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
-			<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
-		</div>
-	</div>
-
 	<div class='show-container'>
 		<div class='image-container'>
+			<div class='inspiration row-fluid'>
+				<div class="inspiration-holder">
+					<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
+					<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
+				</div>
+			</div>
 			<%= image_tag @photo.image_url, :class => 'img-show' %>
 		</div>
 		<div class='user-info'>
@@ -32,3 +31,4 @@
    	</div>
 	</div>
 </div>
+<%= render :partial => 'shared/footer_mobile_other_pages' %>

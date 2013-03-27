@@ -32,23 +32,9 @@
 
 <% if current_user %>
 	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>	
-	<div class="footer-mobile">
-		<div class="menu-button">
-			<%=link_to image_tag('explore-button.png', :class=>'btn-img'), inspirations_path%>
-		</div>
-		<div class="menu-button">
-			<%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %>	
-		</div>
-		<div class="menu-button" id="share-button">
-			<%=image_tag('share-button.png', :class=>'btn-img', :id => "share-button") %>
-		</div>
-	</div>
+	<%= render :partial => 'shared/footer_mobile', :locals => {:inspiration => @inspiration} %>
 <% else %>
-  <div class="photo-form">
-    <div id="choose">
-      <%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
-    </div>
-  </div>
+  <%= render :partial => 'shared/footer_mobile_logged_out', :locals => {:inspiration => @inspiration} %>
 <% end %>
 
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

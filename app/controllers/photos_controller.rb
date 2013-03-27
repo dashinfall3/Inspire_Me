@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id])
+    @inspiration = @photo.inspiration
   end
 
   def new

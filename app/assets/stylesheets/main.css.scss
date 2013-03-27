@@ -285,6 +285,15 @@ img {
   height: 100%;
 }
 
+.menu-button-other {
+  float:left;
+  width: 49%;
+  text-align: center;
+  padding-top: 10px;
+  border-left: 1px solid #ccc;
+  height: 100%;
+}
+
 .menu-button form {
   margin: 0 0 0 0;
 }
@@ -682,3 +691,7 @@ input[type="text"] {
   width: 400px;
 }
 
+.flash {
+  font-weight: 700;
+  margin: 5px 0 5px 0;
+}
