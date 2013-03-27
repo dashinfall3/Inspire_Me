@@ -138,9 +138,9 @@ h3 {
   padding: 60px 0 0 10px;
 }
 
-.inspire_world {
+.inspirely {
   font-family: 'Esteban', serif;
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #777;
   text-decoration: none;
   display: block;
@@ -215,7 +215,7 @@ img {
   top: 0;
   width: 85%;
   font-size: 24px;
-  height: 55px;
+  height: 200px;
 }
 
 #file_field_button_mobile {
@@ -254,7 +254,6 @@ img {
 }
 
 #file_field {
-  display:none;
 }
 
 #file_field_mobile {
@@ -352,12 +351,7 @@ img {
 }
 
 .photo-form {
-  position: fixed;
-  bottom: 0;
-  border-top: #ccc 3px solid;
-  width: 30%;
-  background: #535353;
-  left: 35%;
+  display: none;
 }
 
 .btn-img {

@@ -13,11 +13,11 @@
 		</div>
 	</div>
 	<div id='container'>
-    <div class="item inspire_world" id='file_field_button'>
-      <a class="inspire_world" href=""> Inspire the world ...
+    <div class="item inspire_world">
+      <i class="inspirely"> Inspire the world ...
       <br><br>
       <i class="icon-camera-retro icon-2x" ></i>
-      </a>
+      </i>
     </div>
 	  <% @photos.each do |photo| %>
 	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>

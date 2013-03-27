@@ -16,7 +16,7 @@ $(document).ready(function(){
   });
 
     var chooseButton = new Button;
-    chooseButton.connect("#file_field_button", "#file_field");
+    chooseButton.connect(".inspire_world", "#file_field");
     
     var upload = new Button;
     upload.connect("#photo_upload_button", ".btn");
@@ -26,6 +26,9 @@ $(document).ready(function(){
 
     var photo = new Image;
     photo.choose("#file_field");
+
+
+
 
     var chooseButtonMobile = new Button;
     vote.connect('#file_field_button_mobile', '#file_field_mobile');
@@ -51,7 +54,7 @@ function Image() {};
 Image.prototype.choose = function(selector) {
   $(selector).val('').change(function(){
     $('.btn').click();
-    $('#myModal').modal();
+    // $('#myModal').modal();
   });   
 };
 

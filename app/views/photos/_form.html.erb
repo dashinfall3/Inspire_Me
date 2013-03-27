@@ -10,10 +10,6 @@
         </ul>
       </div>
     <% end %>
-
-      <div id ='caption'>
-        <%= f.text_field :caption,  :placeholder => "caption" %>
-      </div>
       <div>
         <%= f.file_field  :image, :id => 'file_field'%>
       </div>
@@ -22,13 +18,4 @@
         <%= f.submit :class => 'btn',  :value => 'Upload'%>
       </div>  
   <% end %>
-
-
-  <div id="choose">
-    <button id="file_field_button" class="file_field_button_style">Add Photo</button>
-  </div>
-
-  <div id="uploader">
-    <button id="photo_upload_button">Upload</button>
-  </div>
 </div>
