@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.11' 
 
@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 gem 'thin'
 gem 'debugger'
 gem 'font-awesome-sass-rails'
+gem 'redis'
 
 group :development do
   gem 'quiet_assets'
