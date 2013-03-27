@@ -26,8 +26,7 @@
 //body //
   .row-fluid {
   font-size: 0.7em;
- }
-
+  }
 }
 /*
 //////// Mobile view portrait mode/////////////
@@ -43,7 +42,6 @@
     display:none;
   }
 
-// body //
   #share-holder {
     display:none
   } 
@@ -52,11 +50,10 @@
     display: none;
   }
 
-  .inspirely{
+  .inspirely {
     display: none;
   }
 
-// sign in form //
   #form-container {
     padding-top :60px;
     margin-left: 5%;
@@ -67,6 +64,10 @@
     display: block;
   }
 
+  #share-desktop {
+    display: none;
+  }
+
   #share-mobile {
     display: none;
     position: fixed;
@@ -74,7 +75,15 @@
     right: 0px;
   }
 
-  .add-photo{
+  h3 {
+    margin: 0;
+  }
+  .quote{
+    font-size:0.7em;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  .add-photo {
     display: none;
   }
 

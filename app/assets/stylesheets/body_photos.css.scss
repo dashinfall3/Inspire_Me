@@ -1,0 +1,54 @@
+/*spinner*/
+#loading {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 40%;
+  z-index: 1000;
+  border: solid #777 1px;
+  width: 200px;
+  font-size: 1.4em;
+  color: #777;
+  font-family: 'Esteban', serif;
+  background: #B5F5E0;
+  text-align: center;
+  padding: 40px 0 30px 0;
+}
+
+#loading i{
+  padding: 15px 10px;
+}
+
+/*// end spinner //*/
+
+
+#container {
+  margin: 0 auto;
+}
+
+#container .item {
+  border: solid #DDDDDD 1px;
+  background: white;
+  padding: 0;
+}
+
+.inspirely {
+  font-family: 'Esteban', serif;
+  font-size: 1.4em;
+  color: #777;
+  text-decoration: none;
+  display: block;
+  background: #B5F5E0;
+  text-align: center;
+  padding: 40px 0 30px 0;
+} 
+
+.item {
+  width: 220px;
+  margin: 10px;
+  float: left;
+}
+
+.item.masonry-brick{
+  margin: 4px;
+}
