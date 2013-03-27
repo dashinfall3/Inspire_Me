@@ -4,8 +4,8 @@ describe 'Static pages' do
   describe "Index page" do
     before do
       Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
-      create(:inspiration)
-      create(:photo)
+      create :inspiration
+      create :photo
     end
 
     context "when user is not signed in" do
@@ -37,4 +37,7 @@ describe 'Static pages' do
       end
     end
   end
+
+
+
 end

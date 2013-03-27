@@ -16,6 +16,7 @@ FactoryGirl.define do
   factory :photo do
     sequence(:caption) { |n| "Caption#{n}" }
     inspiration
+    user
   end
 
 end
