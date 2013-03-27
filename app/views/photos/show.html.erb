@@ -1,11 +1,10 @@
 <div id="page-container">
 	<p id="notice"><%= notice %></p>
-	<div class='inspiration-date'>
-		<%= @photo.inspiration.created_at.strftime("%B %d, %Y")%>
-	</div>
-
-	<div class='inspiration'>
-		<h1><i class='brand'> Inspiration: </i><span class='quote'><%=@photo.inspiration.content%></span></h1>
+	<div class='inspiration row-fluid'>
+		<div class="inspiration-holder">
+			<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
+			<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
+		</div>
 	</div>
 
 	<div class='show-container'>
@@ -14,7 +13,7 @@
 		</div>
 		<div class='user-info'>
 			<span class='photo-user'>Created By: <%= link_to @photo.user.username, @photo.user %></span>			
-			<div class="fb-like" data-href="http://frozen-cove-1468.herokuapp.com/inspirations/<%=@photo.inspiration.id%>" data-send="true" data-width="450" data-layout="button_count"></div>
+			<div class="fb-like" data-href="http://inspirely.co/photos/<%=@photo.id%>" data-send="true" data-width="450" data-layout="button_count"></div>
 		</div>
 		<div class='vote-stats'>
 	    <% if current_user %>
