@@ -1,0 +1,14 @@
+<header class="fluid-header">
+  <%= link_to "Inspire Me", root_path, id: "logo" %>
+  <ul class="right-nav">
+    <% if current_user %>
+      <li><%= link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
+      <li class='add-photo'><%= link_to "+ inspiration", new_inspiration_path%></li>
+      <li><%= link_to "Profile", current_user %></li>
+      <li class='explore'><%= link_to "Explore", inspirations_path %></li>
+    <% else %>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li><%= link_to "Sign in", new_user_session_path %></li>
+    <% end %>
+  </ul><!-- end of links --> 
+</header> <!-- end of header -->
