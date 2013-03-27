@@ -79,6 +79,10 @@ class Inspiration < ActiveRecord::Base
     self.photos.count
   end
 
+  def photo_by_user(user)
+    self.photos.where(:user_id => user.id)
+  end
+
 
 
 
