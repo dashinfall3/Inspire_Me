@@ -88,8 +88,8 @@ h3 {
   padding: 40px 0 30px 0;
 } 
 
-.inspire_world :hover{
-  text-decoration: none;
+.inspirely:hover {
+  color: #5687B3;
 }
 
 
@@ -683,12 +683,28 @@ input[type="text"] {
     width: 100%;
     text-align: center;
   }
+
 }
 //////////////// end responsive design ////////
 
-#myModal {
-  height: 400px;
-  width: 400px;
+#loading {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 25%;
+  top: 50%;
+  border: solid #777 1px;
+  width: 200px;
+  font-size: 1.4em;
+  color: #777;
+  font-family: 'Esteban', serif;
+  background: #B5F5E0;
+  text-align: center;
+  padding: 40px 0 30px 0;
+}
+
+#loading i {
+  padding: 15px 10px;
 }
 
 .flash {
