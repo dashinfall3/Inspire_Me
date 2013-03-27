@@ -20,8 +20,8 @@ describe 'User pages' do
         fill_in('user_password_confirmation', :with => user[:password])
 
         Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
-        create(:inspiration)
-        create(:photo)
+        create :inspiration
+        create :photo
       end
 
       it "creates a new user" do
@@ -81,8 +81,8 @@ describe 'User pages' do
         fill_in('user_email', :with => user.email )
         fill_in('user_password', :with => user.password )
         Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
-        create(:inspiration)
-        create(:photo)
+        create :inspiration
+        create :photo
       end
 
       describe 'after saving a user' do
@@ -110,4 +110,15 @@ describe 'User pages' do
       it { should have_content 'Invalid email or password.'}
     end
   end
+
+  describe 'Show page' do
+    let(:user) { create :user }
+    before do
+      login_as(user)
+      visit user_path(user)
+    end
+
+   
+
+
 end
