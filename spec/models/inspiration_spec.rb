@@ -131,51 +131,40 @@ describe Inspiration do
 
   end
 
-  describe '#daily_mural' do
-
-    context 'when there are more than 0 live admin Inspirations' do
+  describe '#photo_count' do
+    before do 
+      Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
+      photo = create :photo 
+      @inspiration = photo.inspiration
     end
 
-    context 'when there are 0 live admin Inspirations' do
+    it 'returns the number of photos associated with an inspiration' do
+      @inspiration.photo_count.should eq(1)
     end
 
   end
 
-  describe '#daily_inspiration' do
-
-    context 'when there are more than 0 live admin Inspirations' do
+  describe '#photo_by_user(user)' do
+    before do
+      Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")  
+      photo = create :photo
+      @user = photo.user
+      @inspiration = photo.inspiration     
     end
 
-    context 'when there are 0 live admin Inspirations' do
+    it 'should return an Active Record Relation' do
+      @inspiration.photo_by_user(@user).class.should eq(ActiveRecord::Relation)
     end
-    
+
+    it 'should return photo objects' do
+      @inspiration.photo_by_user(@user).each do |photo|
+        photo.class.should eq(Photo)
+      end
+    end
+
+    it 'should return the correct number of photos' do
+      @inspiration.photo_by_user(@user).count.should eq(1)
+    end
   end
-
-
-
+  
 end
-
-
-# def self.daily_inspiration
-#   inspiration = Inspiration.current_master_inspiration
-
-#   User.all.each do |user|
-#     Notifier.daily_inspiration_email(user, inspiration).deliver
-#     puts "sending email to #{user.username}"
-#   end
-
-#   #send your emails to all users using sidekiq
-#   #InspirationsWorker.perform_async(@inspiration.id)
-# end
-
-# def self.daily_mural
-#   inspiration = Inspiration.current_master_inspiration
-
-#   User.all.each do |user|
-#     Notifier.daily_mural_email(user, inspiration).deliver
-#   end
-
-#   #send your emails to all users using sidekiq
-#   #InspirationsWorker.perform_async(@inspiration.id)
-# end
-
