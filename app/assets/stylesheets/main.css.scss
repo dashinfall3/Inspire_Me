@@ -1,22 +1,7 @@
 @import "bootstrap";
-
-///////////  header - start ///////////////////
-.omar-header {
-  position: fixed;
-  height: 46px;
-  width: 100%;
-  background-color: rgba(248, 254, 255, 0.9);
-  z-index: 1;
-  border-bottom: 1px solid #ddd;
-}
-
-.omar-header a {
-   color: #009B77; 
-   text-decoration: none; 
-}
-
-.omar-header #logo:hover {
-   color: #000;  
+//////////////////body/////////////////
+.inspiration{
+  clear:both
 }
 
 .inspiration-holder {
@@ -51,13 +36,6 @@
   margin: 3px 20px 0 0;
 }
 
-#logo { 
-  padding: 13px 0 0 1%; 
-  font-family: 'Petit Formal Script', cursive; 
-  font-size: 2.2em;
-  display: inline-block;
-}
-
 h3 {
   margin: -10px 0 0 0;
   padding: 0;
@@ -73,47 +51,8 @@ h3 {
 
 #quote-inspire {
   font-size: 40px;
-  font-family: 'esteban';
+  font-family: 'Esteban', serif;
 }
-
-
-
-////////////  header right nav ////////////////
-
-.mobile-nav {
-  float: right;
-  position:relative;
-  right: 0%;
-  border-right: solid 0px;
-}
-
-.mobile-nav li {
-  float: right;
-  margin-right: 4px;
-}
-
-.mobile-nav a {
-  text-align: center;
-  width: 100px;
-  display: block;
-  padding: 13px;
-  font-size: 1.5em;
-  white-space:nowrap;
-} 
-
-.mobile-nav a:hover{
-  background-color: #E8F7FA;
-}
-
-//////////// end header right nav /////////////
-//////////// end header for desktops ////////// 
-
-
-//////////////// end header ///////////////////
-
-
-
-//////////////// start body ///////////////////
 
 .messages {
   color: #009B77; 
@@ -149,8 +88,8 @@ h3 {
   padding: 40px 0 30px 0;
 } 
 
-.inspire_world :hover{
-  text-decoration: none;
+.inspirely:hover {
+  color: #5687B3;
 }
 
 
@@ -346,6 +285,15 @@ img {
   height: 100%;
 }
 
+.menu-button-other {
+  float:left;
+  width: 49%;
+  text-align: center;
+  padding-top: 10px;
+  border-left: 1px solid #ccc;
+  height: 100%;
+}
+
 .menu-button form {
   margin: 0 0 0 0;
 }
@@ -361,9 +309,6 @@ img {
 /////////////  Responsive Design - header /////
 //////////// Laptop view //////////////////////
 @media screen and (max-width: 1200px) {
- .mobile-nav a {
-  font-size: 1.2em;
- }
  .brand, .quote {
   font-size: 0.9em;
  }
@@ -371,14 +316,6 @@ img {
 
 //////////// Ipad view ////////////////////////
 @media screen and (max-width: 768px) {
-  #logo {
-    font-size: 1.8em;
-  }
-  .mobile-nav a {
-   padding: 13px 5px 0px 0px;
-   font-size: 1em;
-   width: 65px;
- }
   .brand, .quote {
   font-size: 0.7em;
  }
@@ -388,13 +325,6 @@ img {
 //////// Mobile view portrait mode/////////////
 
 @media screen and (max-width: 480px) {
-  #logo {
-    font-size: 1.6em;
-   }
-  .mobile-nav a {
-    font-size: 1em;
-    width: 60px;
- }
   .photo-form{
     display: none;
   }
@@ -425,25 +355,18 @@ img {
     bottom: 50px;
     right: 0px;
   }
-  .inspire_world{
+  .inspirely{
     display: none;
   }
-  .explore {
-  display:none;
+
+  #container .inspire_world {
+    border: 0px;
   }
 }
 
 ////////// Mobile view landscape mode /////////
 
 @media screen and (max-width: 320px) {
-  #logo {
-    font-size: 1.4em;
-   }
-  .mobile-nav a {
-    padding: 13px 10px 0px 0px;
-    font-size: 1em;
-    width: 60px;
-  }
   .add-photo {
     display: none;
   }
@@ -474,7 +397,7 @@ img {
     bottom: 50px;
     right: 0px;
   }
-  .inspire_world{
+  .inspire_world {
     display: none;
   }
   .explore {
@@ -760,16 +683,37 @@ input[type="text"] {
     width: 100%;
     text-align: center;
   }
+
 }
 //////////////// end responsive design ////////
 
-#myModal {
-  height: 400px;
-  width: 400px;
+#loading {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 25%;
+  top: 50%;
+  border: solid #777 1px;
+  width: 200px;
+  font-size: 1.4em;
+  color: #777;
+  font-family: 'Esteban', serif;
+  background: #B5F5E0;
+  text-align: center;
+  padding: 40px 0 30px 0;
 }
 
 #flash_alert {
   padding-top: 55px;
   padding-left: 1%;
   color: red;
+}
+
+#loading i {
+  padding: 15px 10px;
+}
+
+.flash {
+  font-weight: 700;
+  margin: 5px 0 5px 0;
 }

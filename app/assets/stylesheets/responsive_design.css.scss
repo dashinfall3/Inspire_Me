@@ -1,0 +1,52 @@
+//////////// Laptop view //////////////////////
+// header //
+@media screen and (max-width: 1200px) {
+  .right-nav a {
+  font-size: 1.2em;
+  }
+}
+//end header // 
+
+
+//////////// Ipad view ////////////////////////
+// header //
+@media screen and (max-width: 768px) {
+  #logo {
+    font-size: 1.8em;
+  }
+  .right-nav a {
+   padding: 13px 5px 13px 0px;
+   font-size: 1em;
+   width: 65px;
+  }
+}
+//end header//
+
+
+
+//////// Mobile view portrait mode/////////////
+//header //
+@media screen and (max-width: 480px) {
+  #logo {
+    font-size: 1.6em;
+  }
+  .right-nav a {
+    width: 60px;
+  }
+  .explore {
+    display:none;
+  }
+}
+
+//end header //
+
+////////// Mobile view landscape mode /////////
+
+@media screen and (max-width: 320px) {
+  #logo {
+    font-size: 1.4em;
+  }
+  .right-nav a {
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,53 @@
+.fluid-header {
+  position: fixed;
+  height: 46px;
+  width: 100%;
+  background-color: rgba(248, 254, 255, 0.9);
+  z-index: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+#logo, .right-nav li a {
+   color: #009B77; 
+   text-decoration: none; 
+}
+
+.fluid-header #logo:hover {
+   color: #000;  
+}
+
+#logo { 
+  padding: 13px 0 0 1%; 
+  font-family: 'Petit Formal Script', cursive; 
+  font-size: 2.2em;
+  display: inline-block;
+}
+
+////////////  header right nav ////////////////
+
+.right-nav {
+  float: right;
+  position:relative;
+  right: 0%;
+  border-right: solid 0px;
+}
+
+.right-nav li {
+  float: right;
+  margin-right: 4px;
+}
+
+.right-nav a {
+  text-align: center;
+  width: 100px;
+  display: block;
+  padding: 13px;
+  font-size: 1.5em;
+  white-space:nowrap;
+} 
+
+.right-nav a:hover{
+  background-color: #E8F7FA;
+}
+
+//////////// end header right nav /////////////

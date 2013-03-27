@@ -1,8 +1,6 @@
 <div id="page-container">
-	<%= render 'shared/messages' %>
 	<div class='inspiration row-fluid'>
 		<div class="inspiration-holder">
-			
 			<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
 			<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
 		</div>
@@ -12,13 +10,28 @@
 			<%= render 'shared/twitter_share' %>
 		</div>
 	</div>
+  <div id="loading">
+    <i>Photo Uploading...</i>
+    <i class="icon-spinner icon-spin icon-4x"></i>
+  </div>
 	<div id='container'>
-    <div class="item inspire_world">
-      <i class="inspirely"> Inspire the world ...
-      <br><br>
-      <i class="icon-camera-retro icon-2x" ></i>
-      </i>
-    </div>
+    <%if current_user%>
+      <div class="item inspire_world" id="cam_upload">
+        <i class="inspirely"> Inspire the world ...
+        <br><br>
+        <i class="icon-camera-retro icon-2x" ></i>
+        </i>
+      </div>
+    <%else%>
+      <a href="/users/sign_in">
+        <div class="item inspire_world">
+          <i class="inspirely"> Sign in to Inspirely
+          <br><br>
+          <i class="icon-camera-retro icon-2x" ></i>
+          </i>
+        </div>
+      </a>
+    <%end%>
 	  <% @photos.each do |photo| %>
 	     <%= render :partial => '/shared/photo', :locals => {:photo => photo} %>
 	  <% end %>
@@ -33,31 +46,9 @@
 
 <% if current_user %>
 	<%= render :partial => 'photos/form', :locals => {:inspiration => @inspiration} %>	
-	<div class="footer-mobile">
-		<div class="menu-button">
-			<%=link_to image_tag('explore-button.png', :class=>'btn-img'), inspirations_path%>
-		</div>
-		<div class="menu-button">
-			<%= render :partial => 'photos/mobile_form', :locals => {:inspiration => @inspiration} %>	
-		</div>
-		<div class="menu-button" id="share-button">
-			<%=image_tag('share-button.png', :class=>'btn-img', :id => "share-button") %>
-		</div>
-	</div>
+	<%= render :partial => 'shared/footer_mobile', :locals => {:inspiration => @inspiration} %>
 <% else %>
-  <div class="photo-form">
-    <div id="choose">
-      <%= button_to "Add your photo", new_user_registration_path, :id => 'file_field_button', :method=> 'get'%>
-    </div>
-  </div>
+  <%= render :partial => 'shared/footer_mobile_logged_out', :locals => {:inspiration => @inspiration} %>
 <% end %>
 
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Consuming Inspiration...</h3>
-  </div>
-  <div class="modal-body">
-    <img id='pacman' src="assets/ajax-loader.gif">
-  </div>
-</div>
+
