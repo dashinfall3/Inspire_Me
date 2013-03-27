@@ -431,7 +431,9 @@ img {
     bottom: 50px;
     right: 0px;
   }
-
+  .inspire_world{
+    display: none;
+  }
 }
 
 ////////// Mobile view landscape mode /////////
@@ -474,6 +476,9 @@ img {
     position: absolute;
     bottom: 50px;
     right: 0px;
+  }
+  .inspire_world{
+    display: none;
   }
 }
 
