@@ -1,40 +1,40 @@
 require 'spec_helper'
 
 describe 'Static pages' do
-
-  subject { page }
-
   describe "Index page" do
-    before { Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png") }
-    let!(:inspiration) { create :inspiration }
-    let!(:photo) { create :photo }
+    before do
+      Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
+      create(:inspiration)
+      create(:photo)
+    end
 
-    context 'user is not signed in' do 
-      it "should not have profile link" do     
-        visit root_path
-        subject.should_not have_content('Profile')
-        subject.should have_content('Log in')
-        subject.should have_content('Sign up')
+    context "when user is not signed in" do
+      before { visit root_path }
+
+      let(:navigation) { page.find('header > ul') }
+
+      it "contains exactly two navigation links" do
+        navigation.should have_selector('a', :count => 2)
+      end
+
+      it "contains a sign up link" do
+        navigation.should have_link_to(new_user_session_path)
+      end
+
+      it "contains a sign in link" do
+        navigation.should have_link_to(new_user_registration_path)
       end
     end
 
-    context 'user is signed in' do
-      let(:user) { create :user }
-      before do
-        visit new_user_session_path
-        fill_in('user_email', :with => user.email )
-        fill_in('user_password', :with => user.password )
-        Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
-        create :inspiration
-        create :photo
-        click_button('Sign in')
-      end
+    context "when user is signed in" do
+      let(:user) { create(:user) }
 
-      it 'should have option to upload photo' do
-        subject.should have_select('button', 'Add Photo')
+      # See spec/support/feature_spec_helper.rb
+      before { login_as(user) }
+
+      it "contains a photo upload form" do
+        page.should have_selector("form[action='#{photos_path}'][method='post'][enctype='multipart/form-data']")
       end
     end
-  
   end
-
 end
