@@ -32,7 +32,7 @@ class InspirationsController < ApplicationController
   def index
     @admin_inspirations = Inspiration.admin_inspirations
     @today_inspiration = Inspiration.current_master_inspiration
-    @inspirations = Inspiration.all
+    @inspirations = Inspiration.order('created_at DESC')
     @inspiration = Inspiration.new
   end
 
