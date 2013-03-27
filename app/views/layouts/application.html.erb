@@ -15,9 +15,7 @@
   <%= render '/shared/facebook_script' %>
   <%= render '/shared/header' %> 
   </header> <!-- end of header -->
-  <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-  <% end %>  
+  <%= render '/shared/devise_errors' %> 
   <%= yield %>
 </body>
 </html>
