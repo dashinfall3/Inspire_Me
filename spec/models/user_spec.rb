@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe User do
   
-  it { should respond_to(:username) }
-  it { should respond_to(:email) }
-  it { should respond_to(:password) }
+  it { should have_db_column(:username) }
+  it { should have_db_column(:email) }
+  it { should have_db_column(:votes_count) }
 
   it { should validate_confirmation_of(:password) }
   it { should ensure_length_of(:password).is_at_least(8) }
@@ -85,10 +85,20 @@ describe User do
     let(:user_admin_false) { build :user, :admin => false }
 
     it 'returns true or false' do  
-      user_admin_true.admin.should eq(true)
-      user_admin_false.admin.should eq(false)
+      user_admin_true.admin?.should eq(true)
+      user_admin_false.admin?.should eq(false)
     end
     
+  end
+
+  describe '#regular' do
+    let(:user_admin_true) { build :user, :admin => true }
+    let(:user_admin_false) { build :user, :admin => false }
+
+    it 'returns true or false' do  
+      user_admin_true.regular.should eq(false)
+      user_admin_false.regular.should eq(true)
+    end
   end
 
 end
