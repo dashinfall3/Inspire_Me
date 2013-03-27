@@ -80,10 +80,12 @@ class Inspiration < ActiveRecord::Base
   end
 
   def photo_by_user(user)
+    return [] if user == nil
     self.photos.where(:user_id => user.id)
   end
 
-
-
+  def photo_by_non_user(user)
+    self.photos - self.photo_by_user(user)
+  end
 
 end
