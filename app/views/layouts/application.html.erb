@@ -25,6 +25,7 @@
       message: 'My Great Request'
     }, requestCallback);
   } </script>
+
   <header class="omar-header">
     <%= link_to "Inspire Me", root_path, id: "logo", class: "brand" %>
     <ul class="mobile-nav">
@@ -39,7 +40,9 @@
       <% end %>
     </ul><!-- end of links --> 
   </header> <!-- end of header -->
-
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <% end %>  
   <%= yield %>
 </body>
 </html>
