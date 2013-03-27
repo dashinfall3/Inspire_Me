@@ -1,96 +1,8 @@
 @import "bootstrap";
 //////////////////body/////////////////
-.inspiration{
-  clear:both
-}
 
-.inspiration-holder {
-  width: 60%;
-  padding: 0 0 0 5%;
-  float: left;
-  margin: -10px 0 0 0;
-}
 
-.share-holder {
-  width: 30%;
-  float: left;
-  background: #f4f4f4;
-  border-radius: 5px;
-  padding: 5px 0 10px 10px;
-}
 
-#share-desktop {
-  display:block
-}
-
-#share-mobile {
-  display: none;
-}
-
-.share-buttons {
-  float:left;
-  margin: 3px 0 0 0;
-}
-
-.facebook-button {
-  margin: 3px 20px 0 0;
-}
-
-h3 {
-  margin: -10px 0 0 0;
-  padding: 0;
-}
-
-.inspiration {
-  color: #777;
-  clear: both;
-  padding: 5px 0 10px 0;
-} .brand, .quote {
-  font-size: 1em;
-}
-
-#quote-inspire {
-  font-size: 40px;
-  font-family: 'Esteban', serif;
-}
-
-.messages {
-  color: #009B77; 
-  float: left;
-}
-
-.fb-like{
-  padding: 3px 0 0 0;
-  overflow: hidden;
-}
-
-.brand{
-  color: #009B77;
-  font-family: 'Petit Formal Script', cursive; 
-}
-
-.quote{
-  font-family: 'Dosis', sans-serif;
-}
-
-#page-container {
-  padding: 60px 0 0 10px;
-}
-
-.inspirely {
-  font-family: 'Esteban', serif;
-  font-size: 1.4em;
-  color: #777;
-  text-decoration: none;
-  display: block;
-  background: #B5F5E0;
-  text-align: center;
-  padding: 40px 0 30px 0;
-} 
-
-.inspire_world :hover{
-  text-decoration: none;
-}
 
 
 label {
@@ -133,16 +45,16 @@ img {
   font-size: 14px;
 }
 
-#container {
-  margin: 0 auto;
-  padding-bottom: 80px;
-}
 
 
 #container .item {
   border: solid #DDDDDD 1px;
   background: white;
   padding: 0;
+}
+
+#share-mobile {
+  display: none;
 }
 
 .file_field_button_style {
@@ -297,21 +209,6 @@ img {
   height:30px;
 }
 
-/////////////  Responsive Design - header /////
-//////////// Laptop view //////////////////////
-@media screen and (max-width: 1200px) {
- .brand, .quote {
-  font-size: 0.9em;
- }
-}
-
-//////////// Ipad view ////////////////////////
-@media screen and (max-width: 768px) {
-  .brand, .quote {
-  font-size: 0.7em;
- }
-
-}
 
 //////// Mobile view portrait mode/////////////
 
@@ -336,10 +233,6 @@ img {
     width: 95%;
   }
 
-  #share-desktop {
-    display:none
-  }
-
   #share-mobile {
     display: none;
     position: fixed;
@@ -348,10 +241,6 @@ img {
   }
   .inspirely{
     display: none;
-  }
-
-  #container .inspire_world {
-    border: 0px;
   }
 }
 
@@ -378,25 +267,16 @@ img {
     width: 95%;
   }
 
-  #share-desktop {
-    display:none
-  }
-
   #share-mobile {
     display: block;
     position: absolute;
     bottom: 50px;
     right: 0px;
   }
-  .inspire_world {
-    display: none;
-  }
-  .explore {
-  display:none;
-  }
+
 }
 
-//////////////// end responsive design ////////
+
 
 
 

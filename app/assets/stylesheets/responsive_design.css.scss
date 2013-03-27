@@ -4,9 +4,12 @@
   .right-nav a {
   font-size: 1.2em;
   }
-}
-//end header // 
 
+// body //
+ .row-fluid {
+  font-size: 0.9em;
+ }
+}
 
 //////////// Ipad view ////////////////////////
 // header //
@@ -19,10 +22,13 @@
    font-size: 1em;
    width: 65px;
   }
+
+//body //
+  .row-fluid {
+  font-size: 0.7em;
+ }
+
 }
-//end header//
-
-
 
 //////// Mobile view portrait mode/////////////
 //header //
@@ -36,12 +42,19 @@
   .explore {
     display:none;
   }
+
+// body //
+  #share-holder {
+    display:none
+  } 
+  #container .inspire_world {
+    border: 0px;
+    display: none;
+  }
 }
 
-//end header //
-
 ////////// Mobile view landscape mode /////////
-
+//header //
 @media screen and (max-width: 320px) {
   #logo {
     font-size: 1.4em;
