@@ -8,7 +8,7 @@ FactoryGirl.define do
   end
 
   factory :inspiration do
-    sequence(:content) { |n| "Content #{n} more content!"}
+    sequence(:content) { |n| "Content #{n} more #{rand(999)}content!"}
     status 0
     creator
   end
