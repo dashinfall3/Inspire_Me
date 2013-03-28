@@ -12,7 +12,6 @@ class InspirationsController < ApplicationController
       @inspiration.status = 1
     end
     if @inspiration.save
-      #deliver email to friends if @inspiration.status == 1
       Notifier.create_inspiration(current_user, @inspiration).deliver
       redirect_to inspiration_path(@inspiration)
     else

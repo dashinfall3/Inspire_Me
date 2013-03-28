@@ -29,25 +29,13 @@ class Inspiration < ActiveRecord::Base
   # end
   
   def self.daily_inspiration
-  	inspiration = Inspiration.current_master_inspiration
-
-  	User.all.each do |user|
-  		Notifier.daily_inspiration_email(user, inspiration).deliver
-  	end
-
     #send your emails to all users using sidekiq
-  	#InspirationsWorker.perform_async(@inspiration.id)
+  	InspirationsWorker.perform_async()
   end
 
   def self.daily_mural
-    inspiration = Inspiration.current_master_inspiration
-
-    User.all.each do |user|
-      Notifier.daily_mural_email(user, inspiration).deliver
-    end
-
     #send your emails to all users using sidekiq
-    #InspirationsWorker.perform_async(@inspiration.id)
+    MuralsWorker.perform_async()
   end
 
   def self.update_current_master_inspiration
