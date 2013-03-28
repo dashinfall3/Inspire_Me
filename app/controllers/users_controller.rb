@@ -6,6 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @photo = Photo.new
-    @inspirations = @user.inspirations
+    @inspirations = @user.inspirations.reverse
   end
 end
