@@ -23,12 +23,17 @@
   display: none;
 }
 #file_field_mobile {
-  display:none;
+  display: block;
+  width: 140px;
+  position: absolute;
+  opacity: 0;
 }
+
 #photo_upload_button_mobile {
   background-color: white;
   border: none;
 }
+
 .photo-form {
   display: none;
 }
@@ -47,6 +52,7 @@
 #file_field_button_mobile {
   background-color: white;
   border: none;
+  margin: -2px 0 0 0;
 }
 
 .btn-img {
