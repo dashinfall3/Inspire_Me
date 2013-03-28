@@ -27,6 +27,17 @@
   .row-fluid {
   font-size: 0.7em;
   }
+  .quote-inspire{
+  font-size: 18px;
+  }
+}
+.inspiration-page {
+  font-size: 0.8em;
+} 
+
+.inspiration-page h1 {
+  font-size: 2em;
+  line-height: 140%;
 }
 /*
 //////// Mobile view portrait mode/////////////
@@ -46,17 +57,20 @@
     display:none
   } 
   .inspiration-holder{
-    width: 100%;
-    padding: 0 3%;
+    width: 90%;
   }
   .quote-inspire{
-    height: 25px;
+    font-size: 17px; 
   }
 //spinner
   #loading {
     left: 25%;
   }
   
+  #container {
+    padding-bottom: 60px;
+  }
+
   #container .inspire_world {
     border: 0px;
     display: none;
@@ -88,9 +102,6 @@
     right: 0px;
   }
 
-  h3 {
-    margin: 0;
-  }
   .quote{
     font-size:0.7em;
     font-family: 'Dosis', sans-serif;
@@ -99,13 +110,17 @@
   .add-photo {
     display: none;
   }
+  .inspiration-page {
+    width: 80%;
+    margin: 10px auto 0px;
+    font-size: 0.6em;
+  } 
 
-/*// admin //*/
-  #quote-inspire {
-    font-size: 0.5em;
-    width: 95%;
+  .inspiration-page h1 {
+    
+    line-height: 140%;
+    margin-bottom: 0;
   }
-
 }
 /*
 ////////// Mobile view landscape mode /////////

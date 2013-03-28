@@ -1,17 +1,18 @@
 <div id="page-container">
 	<p id="notice"><%= notice %></p>
 	<div class='show-container'>
-		<div class='image-container'>
-			<div class='inspiration row-fluid'>
-				<div class="inspiration-holder">
-					<h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
-					<div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
-				</div>
-			</div>
-			<%= image_tag @photo.image_url, :class => 'img-show' %>
-		</div>
-		<div class='user-info'>
-			<span class='photo-user'>Created By: <%= link_to @photo.user.username, @photo.user %></span>			
+		<div class="inspiration-page">
+      <h1>
+        <%=@inspiration.content%>
+      </h1>
+      <div ><%= DateTime.now.strftime("%B %d, %Y")%>
+      </div>
+    </div>
+      <div class='image-container'>
+			 <%= image_tag @photo.image_url, :class => 'img-show' %>
+		  </div>
+		  <div class='user-info'>
+			 <span class='photo-user'>Created By: <%= link_to @photo.user.username, @photo.user %></span>			
 			<div class="fb-like" data-href="http://inspirely.co/photos/<%=@photo.id%>" data-send="true" data-width="450" data-layout="button_count"></div>
 		</div>
 		<div class='vote-stats'>
@@ -26,7 +27,7 @@
             <% end %>
 	        <% end %>
 	    <% end %>
-	    
+    </div>
    	</div>
 	</div>
 </div>
