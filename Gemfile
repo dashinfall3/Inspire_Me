@@ -28,6 +28,7 @@ gem 'slim'
 
 group :development do
   gem 'quiet_assets'
+  gem 'foreman'
 end
 
 # Gems used only for assets and not required

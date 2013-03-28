@@ -96,6 +96,8 @@ GEM
     font-awesome-sass-rails (3.0.2.2)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
+    foreman (0.62.0)
+      thor (>= 0.13.6)
     formatador (0.2.4)
     hashie (1.2.0)
     hike (1.2.1)
@@ -269,6 +271,7 @@ DEPENDENCIES
   faker
   fog
   font-awesome-sass-rails
+  foreman
   jquery-rails
   mini_magick
   omniauth
