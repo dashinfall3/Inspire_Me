@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.11)
       actionpack (= 3.2.11)
@@ -277,6 +277,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.11)
+  redis
   rspec-rails
   sass-rails
   shoulda-matchers
