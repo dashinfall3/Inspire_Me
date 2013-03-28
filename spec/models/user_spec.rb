@@ -101,18 +101,28 @@ describe User do
     end
   end
 
+  describe '#voted_on?(photo)' do
+    before do 
+      Photo.any_instance.stub(:image => "https://s3.amazonaws.com/uploads/photo/image/1/logo-logged-in_4x-6a0620a1bd429fde8a2dd01fb4baef26.png")
+    end
+    let!(:vote) { create :vote }
+    let(:user) { create :user }
+    let(:photo) { create :photo }
+
+    it 'takes one argument' do
+      User.public_instance_method(:voted_on?).arity.should eq(1)
+    end
+
+    it 'returns true if user has voted' do
+      user  = vote.voter
+      photo = vote.photo
+      user.voted_on?(photo).should eq(true)
+    end
+
+    it 'returns false if user has not voted' do
+      user.voted_on?(photo).should eq(false)
+    end
+
+  end
+
 end
-
-# def add_as_participant(photo)
-#   InspirationUser.create(:user_id => self.id, :inspiration_id => photo.inspiration.id, :photo_id => photo.id)
-# end
-
-# def admin?
-#   self.admin == true
-# end
-
-# private
-
-# def downcase_email!
-#   self.email.downcase!
-# end
