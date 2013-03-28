@@ -27,6 +27,9 @@ $(document).ready(function(){
     var photo = new Image;
     photo.choose("#file_field");
 
+    var chooseButtonMobile = new Button;
+    vote.connect('#file_field_button_mobile', '#file_field_mobile');
+
     var uploadMobile = new Button;
     upload.connect("#photo_upload_button_mobile", ".btn_mobile");
 
