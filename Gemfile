@@ -13,10 +13,18 @@ gem 'pg'
 gem 'sidekiq'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'thin'
+gem 'unicorn'
 gem 'debugger'
 gem 'font-awesome-sass-rails'
 gem 'redis'
+
+gem 'jquery-rails'
+
+
+# For Sidekiq admin
+gem 'sinatra', require: false
+gem 'slim'
+
 
 group :development do
   gem 'quiet_assets'
@@ -43,24 +51,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
 end
-
-gem 'jquery-rails'
-
-gem 'unicorn'
-
-gem 'sinatra', require: false
-gem 'slim'
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
