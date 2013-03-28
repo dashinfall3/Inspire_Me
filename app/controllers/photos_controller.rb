@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       if @photo.save
         current_user.add_as_participant(@photo)
-        format.html { redirect_to :back, notice: 'Photo added to inspiration.' }
+        format.html { redirect_to :back, notice: 'Photo added to inspiration. Reload in a few seconds to see it.' }
       else
         format.html { redirect_to :back, notice: "Photo not added. Sorry we're not quite ready for that much inspiration" }
       end
