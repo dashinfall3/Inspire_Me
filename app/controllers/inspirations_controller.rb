@@ -33,6 +33,7 @@ class InspirationsController < ApplicationController
     @today_inspiration = Inspiration.current_master_inspiration
     @inspirations = Inspiration.order('created_at DESC')
     @inspiration = Inspiration.new
+    @allinspirations = [@today_inspiration] + @inspirations
   end
 
   protected
