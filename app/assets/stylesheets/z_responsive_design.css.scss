@@ -46,9 +46,18 @@
   #logo {
     font-size: 1.6em;
   }
+
   .right-nav a {
-    width: 60px;
+    width: 40px;
+    font-size: .8em;
+    margin: 0;
+    padding: 15px 0 0 0 ;
   }
+
+  .right-nav li{
+    padding:  0;
+  }
+  
   .explore {
     display:none;
   }
@@ -123,8 +132,20 @@
   }
 
   .item {
-    width: 47%;
+    width: 44%;
   }
+
+  .content-name {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.content-date {
+  padding-top: 3px;
+  font-size: .9em;
+}
+
+
 }
 /*
 ////////// Mobile view landscape mode /////////
