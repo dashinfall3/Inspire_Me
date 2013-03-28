@@ -41,10 +41,22 @@
   .explore {
     display:none;
   }
-
+// body
   #share-holder {
     display:none
   } 
+  .inspiration-holder{
+    width: 100%;
+    padding: 0 3%;
+  }
+  .quote-inspire{
+    height: 25px;
+  }
+//spinner
+  #loading {
+    left: 25%;
+  }
+  
   #container .inspire_world {
     border: 0px;
     display: none;
@@ -90,7 +102,7 @@
 
 /*// admin //*/
   #quote-inspire {
-    font-size: 24px;
+    font-size: 0.5em;
     width: 95%;
   }
 
