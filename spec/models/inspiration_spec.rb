@@ -104,10 +104,10 @@ describe Inspiration do
     context 'when there is 1 admin inspiration pending, 0 live' do
       let!(:inspiration) { create :inspiration }
 
-      xit 'updates the first pending inspiration to live' do
+      it 'updates the first pending inspiration to live' do
         Inspiration.update_current_master_inspiration
-        inspiration1.reload
-        inspiration1.status.should eq(1)
+        inspiration.reload
+        inspiration.status.should eq(1)
       end
 
     end
