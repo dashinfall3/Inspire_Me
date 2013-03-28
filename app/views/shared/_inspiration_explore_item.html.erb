@@ -1,5 +1,8 @@
 <div class="profile-bar">
-  <div class="row-fluid"> 
+  <div class="row-fluid">
+    <div class="content-date">
+       <%= inspiration_explore_item.created_at.strftime("%d %b. %Y") %>
+    </div>
     <div class="span9 content-name">
        <%= inspiration_explore_item.content %>
     </div>
