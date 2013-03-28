@@ -22,15 +22,17 @@
 }
 
 .content-name {
-  font-size: 12px;
+  font-size: 1.4em;
   padding-top: 10px;
-  font-family: 'Petit Formal Script', cursive;
-  color: #009B77; 
+  font-family: 'Esteban', serif;
+  color: #009B77;
+  font-weight: bold;
 }
 
 .content-date {
   padding-top: 15px;
-  font-family: 'Petit Formal Script', cursive;
+  font-family: 'Esteban', serif;
+  font-size: 1em;
 }
 
 .content-photo {
@@ -38,9 +40,17 @@
 }
 
 .profile-title {
-  padding: 10px 0 0 20px;
+  padding: 10px 0 0 4%;
+  font-family: 'Esteban', serif;
+}
+
+.other-profile-title{
+  font-size: 2.3em;
+  padding-left: 4%;
+  font-family: 'Esteban', serif;
 }
 
 .profile-subtitle {
-  padding: 0 20px; 
+  padding-left: 4%;
+  font-family: 'Esteban', serif;
 }

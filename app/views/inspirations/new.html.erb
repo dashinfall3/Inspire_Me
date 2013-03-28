@@ -7,7 +7,11 @@
 	</div>
 	<%= form_for @inspiration do |f| %>
 		<% if flash[:error] -%>
-		  <p class='error'><%= flash[:error] %></p>
+		  <div class='error'>
+		  	<% flash[:error].each do |error| %>
+		  		<%= error %>
+		  	<% end %>
+		  </div>
 		<% end -%>
 		<%=f.text_field :content, :placeholder => "quote...", :id => "new-inspiration" %>
 		<div><%=f.submit "Add" %></div>

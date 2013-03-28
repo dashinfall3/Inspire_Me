@@ -1,20 +1,20 @@
 <div id="page-container">
   <% if @user == current_user %>
-    <h1 class="profile-title">My Inspirely Profile</h1>
+    <h1 class="profile-title">My Profile</h1>
   <% else %>  
-    <h1 class="profile-title"><%= @user.username %>'s Inspirely Profile</h1>
+    <h1 class="other-profile-title"><%= @user.username %></h1>
   <% end %>
 
-  <h3 class="profile-subtitle">Inspiration replies: <span id='count'><%= @user.photos.count %></span></h3>
+  <h3 class="profile-subtitle"><span id='count'><%= @user.photos.count %></span> Inspirations</h3>
 
   <% @inspirations.each do |inspiration| %>
     <a href="/inspirations/<%=inspiration.id%>">
-      <div class="row-fluid profile-bar"> 
-        <div class="span9 content-name">
-           <%= inspiration.content %>
-        </div>
-        <div class="span2 content-date">
+      <div class="profile-bar"> 
+        <div class="content-date">
          <%= inspiration.created_at.strftime("%d %b. %Y") %>
+        </div>
+        <div class="content-name">
+           <%= inspiration.content %>
         </div>
         <div class="row-fluid photo_thumbs">
           <%= render :partial => '/shared/photo_thumb', :collection => inspiration.photo_by_user(@user).limit(6) %>
