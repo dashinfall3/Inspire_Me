@@ -3,7 +3,7 @@
   <ul class="right-nav">
     <% if current_user %>
       <li><%= link_to "Logout", destroy_user_session_path, :method => 'delete' %></li>
-      <li class='add-photo'><%= link_to "+ inspiration", new_inspiration_path%></li>
+      <li><%= link_to "+Inspire", new_inspiration_path%></li>
       <li><%= link_to "Profile", current_user %></li>
       <li class='explore'><%= link_to "Explore", inspirations_path %></li>
     <% else %>

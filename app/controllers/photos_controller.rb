@@ -19,15 +19,13 @@ class PhotosController < ApplicationController
 
   def create
     @photo = current_user.photos.build(params[:photo])
-
+    @inspiration = @photo.inspiration
     respond_to do |format|
       if @photo.save
         current_user.add_as_participant(@photo)
-        format.html { redirect_to :back, notice: 'Photo added to inspiration.' }
-        format.json { render json: @photo, status: :created, location: @photo }
+        format.html { redirect_to :back, notice: 'Photo added to inspiration. Reload in a few seconds to see it.' }
       else
-        format.html { render action: "new" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        format.html { redirect_to :back, notice: "Photo not added. Sorry we're not quite ready for that much inspiration" }
       end
     end
   end
@@ -35,10 +33,8 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-
     respond_to do |format|
       format.html { redirect_to photos_url }
-      format.json { head :no_content }
     end
   end
 end

@@ -1,11 +1,15 @@
 <div id="page-container">
-	<h1>Create an inspiration </h1>
-
+	<div class='row-fluid'>
+		<div class="create-bar">
+			<h3 class="quote-inspire">Create an inspiration </h3>
+			<h5>Add an inspirational quote and send it to friends. Create a beautiful mural of photos together.</h5>
+		</div>
+	</div>
 	<%= form_for @inspiration do |f| %>
 		<% if flash[:error] -%>
 		  <p class='error'><%= flash[:error] %></p>
 		<% end -%>
-		<%=f.text_field :content, :placeholder => "inspire folks", :id => "new-inspiration" %>
-		<div><%=f.submit "Next step: send to friends" %></div>
+		<%=f.text_field :content, :placeholder => "quote...", :id => "new-inspiration" %>
+		<div><%=f.submit "Add" %></div>
 	<% end %>
 </div>
