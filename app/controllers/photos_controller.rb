@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
         current_user.add_as_participant(@photo)
         format.html { redirect_to :back, notice: 'Photo added to inspiration.' }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to :back, notice: "Photo not added. Sorry we're not quite ready for that much inspiration" }
       end
     end
   end
