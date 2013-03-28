@@ -1,9 +1,8 @@
 <div id="page-container">
   <div class='inspiration row-fluid'>
     <div class="inspiration-holder">
-      
-      <h1><span class="quote" id="quote-inspire"><%=@inspiration.content%></span></h1>
-      <div class='quote'><%= DateTime.now.strftime("%B %d, %Y")%></div>
+      <h3 class="quote-inspire"><%=@inspiration.content%></h3>
+      <h6 class="time"><%= DateTime.now.strftime("%B %d, %Y")%></h6>
     </div>
     <div class="share-holder" id="share-desktop">
       <h3><span class="quote">Inspire friends</span></h3>
@@ -19,7 +18,7 @@
     <div id='container'>
       <%if current_user%>
         <div class="item inspire_world" id="cam_upload">
-          <i class="inspirely"> Inspire the world ...
+          <i class="inspirely"> Add photo...
           <br><br>
           <i class="icon-camera-retro icon-2x" ></i>
           </i>
