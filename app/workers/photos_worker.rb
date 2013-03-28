@@ -1,14 +1,14 @@
 class PhotosWorker
 	include Sidekiq::Worker
-	include CarrierWave::MimeTypes
 
-	sidekiq_options retry: false
+	sidekiq_options :retry => false
 
-	def perform()
-    	# process :fix_exif_rotation
-		
-		version :thumb do
-			process :resize_to_fill => [50, 50]
-		end
+	def perform(photo_id)
+		photo = Photo.find(photo_id)
+		photo.update_attribute :key, params[:key]
+		# download image from S3
+		photo.image = #something here I'm not sure what
+		photo.in_progress = false
+		photo.save
 	end
 end

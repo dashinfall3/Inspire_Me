@@ -1,5 +1,5 @@
 <div class="photo-form">
-  <%= form_for @photo do |f| %>
+  <%= direct_upload_form_for Photo.new.image do |f| %>
     <% if @photo.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -10,12 +10,13 @@
         </ul>
       </div>
     <% end %>
-      <div>
-        <%= f.file_field  :image, :id => 'file_field'%>
-      </div>
-      <%= f.hidden_field :inspiration_id, :value => inspiration.id %>
-      <div id ='photo-button'>
-        <%= f.submit :class => 'btn',  :value => 'Upload'%>
-      </div>  
+    <%= f.file_field :image, :id => 'file_field' %>
+    <%= f.hidden_field :inspiration_id, :value => inspiration.id %>
+    <div id ='photo-button'>
+      <%= f.submit :class => 'btn',  :value => 'Upload'%>
+    </div>  
   <% end %>
 </div>
+
+
+

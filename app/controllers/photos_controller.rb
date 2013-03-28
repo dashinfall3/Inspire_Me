@@ -7,10 +7,16 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @inspiration = @photo.inspiration
+
+    respond_to do |format|
+      format.json { render :json => @photo }
+      format.html
+    end
   end
 
   def new
-    @photo = Photo.new
+    @photo = Photo.new.image
+    @photo.success_action_redirect = carrier_redirect_url
   end
 
   def edit
@@ -36,5 +42,11 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to photos_url }
     end
+  end
+
+  def carrier_redirect
+    #perform_async job
+    flash[:notice] = "hey I went to the redirect"
+    redirect_to root_path
   end
 end

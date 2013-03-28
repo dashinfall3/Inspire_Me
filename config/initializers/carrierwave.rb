@@ -9,6 +9,7 @@ if File.exists? Rails.root.join('config', 's3.yml')
 end
 
 CarrierWave.configure do |config|
+  config.storage = :fog
   config.fog_credentials = {
     :provider               => "AWS",
     :aws_access_key_id      =>  ENV["AWS_ACCESS_KEY_ID"],

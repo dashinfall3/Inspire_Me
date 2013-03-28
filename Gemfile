@@ -6,6 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'carrierwave_direct'
+
 gem 'mini_magick'
 gem 'devise'
 gem 'fog'
@@ -18,7 +19,6 @@ gem 'font-awesome-sass-rails'
 gem 'redis'
 
 gem 'jquery-rails'
-
 
 # For Sidekiq and Sidekiq admin
 gem 'sidekiq'
