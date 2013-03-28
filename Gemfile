@@ -10,7 +10,6 @@ gem 'mini_magick'
 gem 'devise'
 gem 'fog'
 gem 'pg'
-gem 'sidekiq'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'unicorn'
@@ -21,10 +20,11 @@ gem 'redis'
 gem 'jquery-rails'
 
 
-# For Sidekiq admin
+# For Sidekiq and Sidekiq admin
+gem 'sidekiq'
+gem 'sidekiq-failures'
 gem 'sinatra', require: false
 gem 'slim'
-
 
 group :development do
   gem 'quiet_assets'
