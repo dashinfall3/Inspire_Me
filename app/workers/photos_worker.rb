@@ -1,10 +1,10 @@
 class PhotosWorker
 	include Sidekiq::Worker
+	include CarrierWave::MimeTypes
+
 	sidekiq_options retry: false
 
 	def perform()
-		include CarrierWave::MimeTypes
-
     	process :fix_exif_rotation
 		
 		version :thumb do
