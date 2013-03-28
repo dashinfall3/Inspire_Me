@@ -24,6 +24,4 @@ FactoryGirl.define do
     photo
   end
 
-
-
 end
