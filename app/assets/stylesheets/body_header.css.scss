@@ -1,5 +1,5 @@
 #page-container {
-  padding: 60px 0 0 0px;
+  padding: 50px 0 0 0px;
 }
 
 .messages {
@@ -16,10 +16,20 @@
 
 .inspiration-holder {
   width: 60%;
-  padding: 0 0 0 5%;
+  height: 75px;
+  padding: 15px 0 0 5%;
   float: left;
-  margin: -10px 0 0 0;
-  font-size: 1.2em;
+  font-size: 3em;
+}
+
+.quote-inspire {
+  height: 50px;
+  font-size: 1em;
+  vertical-align:text-bottom;
+}
+
+.time {
+  font-size: 0.3em;
 }
 
 .share-holder {
@@ -31,7 +41,7 @@
 }
 
 #quote-inspire {
-  font-size: 40px;
+  font-size: 1em;
   font-family: 'Esteban', serif;
 }
 
