@@ -3,11 +3,13 @@
     <div class="content-date">
        <%= inspiration_explore_item.created_at.strftime("%d %b. %Y") %>
     </div>
-    <div class="span9 content-name">
-       <%= inspiration_explore_item.content %>
-    </div>
-    <div class="span2 content-date">
-       <%=inspiration_explore_item.photo_count %> photos
+    <div class="row-fluid">
+      <div class="span9 content-name">
+         <%= inspiration_explore_item.content %>
+      </div>
+      <div class="span2 content-date">
+         <%=inspiration_explore_item.photo_count %> photos
+      </div>
     </div>
     <%=link_to "", inspiration_path(inspiration_explore_item) %>
   </div>
