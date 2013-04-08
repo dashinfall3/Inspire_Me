@@ -1,12 +1,13 @@
 <div id="page-container">
   <h1 class="other-profile-title"><%= @user.username %> </h1> 
   <h3 class="profile-subtitle"><span id='count'><%= @user.photos.count %></span> Photos</h3>
-   
+  <% if @user == current_user %> 
     <% if @user.subscribed? %>
       <h5 class="profile-subtitle"><%=link_to "Unsubscribe", unsubscribe_user_path(@user.id), :method => :post %> from Inspirely emails</h5>
     <% else %>
       <h5 class="profile-subtitle"><%=link_to "Subscribe", subscribe_user_path(@user.id), :method => :post %> to Inspirely daily emails</h5>
     <% end %>
+  <% end %>
   <% @inspirations.each do |inspiration| %>
     <a href="/inspirations/<%=inspiration.id%>">
       <div class="profile-bar"> 
