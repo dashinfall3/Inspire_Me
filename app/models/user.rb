@@ -56,6 +56,10 @@ class User < ActiveRecord::Base
     photo.votes.where(:voter_id => self.id).any?
   end
 
+  def subscribed?
+    self.subscription_status == 0
+  end
+
   private
 
   def downcase_email!

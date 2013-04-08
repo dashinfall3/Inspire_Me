@@ -10,14 +10,16 @@ class UsersController < ApplicationController
   end
 
   def subscribe
-  	current_user.subscription_status = 0
-  	current_user.save
+    @user = User.find(params[:id])
+  	@user.subscription_status = 0
+  	@user.save
   	redirect_to :back
   end
 
   def unsubscribe
-  	current_user.subscription_status = 1
-  	current_user.save
+    @user = User.find(params[:id])
+    @user.subscription_status = 1
+  	@user.save
   	redirect_to :back
   end
 end
