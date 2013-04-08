@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   before_save :downcase_email!
 
   scope :admins, where(:admin => true)
+  scope :subscribed, where(:subscription_status => 0)
+  scope :unsubscribed, where(:subscription_status => 1)
 
   def add_as_participant(photo)
     InspirationUser.create(:user_id => self.id, :inspiration_id => photo.inspiration.id, :photo_id => photo.id)
