@@ -1,7 +1,12 @@
 InspireMe::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    member do 
+      post 'subscribe'
+      post 'unsubscribe'
+    end
+  end
 
   root :to => 'static_pages#index'
 
