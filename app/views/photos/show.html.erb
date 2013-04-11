@@ -16,7 +16,7 @@
 			<div class="fb-like" data-href="http://inspirely.co/photos/<%=@photo.id%>" data-send="true" data-width="450" data-layout="button_count"></div>
 		</div>
 		<div class='vote-stats'>
-			<span class='vote-count'>Vote Count: <%= @photo.votes.count %></span>
+			<div class='vote-count'>Vote Count: <%= @photo.votes.count %></div>
 	    <% if current_user %>
 	        <% if current_user.voted_on? @photo %>
 	         <span class='voted'>Voted!</span>
@@ -26,7 +26,9 @@
               <%= f.submit 'Vote', :class=> 'submit-button' %>
             <% end %>
 	        <% end %>
-	    <% end %>
+      <% else %>
+        <a class='signin-photo' href="/users/sign_in"><div class='signin-button'>Sign in to Vote</div>
+	    <% end %></a>
     </div>
    	</div>
 	</div>
