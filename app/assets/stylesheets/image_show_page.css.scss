@@ -59,16 +59,32 @@
   margin-left: 5%;
 }
 
-.vote-count{
-  float: right; 
-}
-
 .user-info {
   width: 40%;
   margin-left: 30%;
   margin-right: 30%;
   margin-top: 10px;
 }
+
+.vote-count {
+  margin: 10px 0 0 0;
+}
+
+.signin-button {
+  background: #009B77;
+  margin: 10px 0 0 0;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 2px;
+}
+
+.signin-photo:hover {
+  text-decoration: none;
+}
+
 
 .photo-user{
   float: left;
