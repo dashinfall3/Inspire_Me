@@ -19,7 +19,7 @@
 			<div class='vote-count'>Vote Count: <%= @photo.votes.count %></div>
 	    <% if current_user %>
 	        <% if current_user.voted_on? @photo %>
-	         <span class='voted'>Voted!</span>
+	         <div class='voted'>Voted!</div>
 	        <% else %>
             <%= form_for @photo.votes.build do |f| %>
               <%= f.hidden_field :photo_id %>
@@ -27,8 +27,8 @@
             <% end %>
 	        <% end %>
       <% else %>
-        <a class='signin-photo' href="/users/sign_in"><div class='signin-button'>Sign in to Vote</div>
-	    <% end %></a>
+        <a class='signin-photo' href="/users/sign_in"><div class='signin-button'>Sign in to Vote</div></a>
+	    <% end %>
     </div>
    	</div>
 	</div>

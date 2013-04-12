@@ -47,16 +47,12 @@
 
 #new_vote input[type="submit"] {
   background: #009B77;
-  width: 50%;
+  margin: 5px 0 0 0;
+  width: 100%;
   float: left;
   height: 40px;
   font-size: 1.2em;
   color: white;
-}
-
-.voted{
-  float: left;
-  margin-left: 5%;
 }
 
 .user-info {
@@ -67,7 +63,8 @@
 }
 
 .vote-count {
-  margin: 10px 0 0 0;
+  padding: 20px 0 0 0;
+  text-align: center;
 }
 
 .signin-button {
@@ -75,6 +72,17 @@
   margin: 10px 0 0 0;
   color: white;
   font-size: 1em;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 2px;
+}
+
+.voted {
+  background: none;
+  margin: 10px 0 0 0;
+  color: black;
+  font-size: .8em;
   height: 40px;
   text-align: center;
   line-height: 40px;
@@ -151,15 +159,10 @@
     font-size: 1.2em;
     color: white;
   }
-  .voted{
-    margin-top: 5px;
-    width: 100%;
-    text-align: center;
-  }
+
   .vote-count{
     margin-top: 5px;
     width: 100%;
-    text-align: center;
   }
 }
 /*//////////////// end responsive design ////////*/
